@@ -17,5 +17,12 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('aep'),
             'level' => 'admin'
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'wm',
+            'email' => 'wm@gmail.com',
+            'password' => bcrypt('wm'),
+            'level' => 'user'
+        ]);
     }
 }

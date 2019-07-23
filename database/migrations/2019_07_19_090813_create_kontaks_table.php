@@ -20,6 +20,7 @@ class CreateKontaksTable extends Migration
             $table->string('link', 100)->nullable();
             $table->string('gambar', 100)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

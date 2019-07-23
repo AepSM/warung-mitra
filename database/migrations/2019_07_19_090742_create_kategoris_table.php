@@ -17,6 +17,7 @@ class CreateKategorisTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama', 50)->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

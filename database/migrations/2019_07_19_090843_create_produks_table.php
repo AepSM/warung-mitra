@@ -29,6 +29,7 @@ class CreateProduksTable extends Migration
             $table->integer('terjual')->unsigned()->nullable();
             $table->integer('dilihat')->unsigned()->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

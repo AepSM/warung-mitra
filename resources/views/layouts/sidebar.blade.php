@@ -26,23 +26,23 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MENU NAVIGASI</li>
-                <li class="#">
+                <li class="{{ set_active(['home', 'home/*']) }}">
                     <a href="{{ url('/home') }}">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="#">
-                    <a href="#">
+                <li class="{{ set_active(['kategori', 'kategori/*']) }}">
+                    <a href="{{ url('/kategori') }}">
                         <i class="fa fa-book"></i> <span>Kategori</span>
                     </a>
                 </li>
-                <li class="#">
-                    <a href="#">
+                <li class="{{ set_active(['produk', 'produk/*']) }}">
+                    <a href="{{ url('/produk') }}">
                         <i class="fa fa-book"></i> <span>Produk</span>
                     </a>
                 </li>
-                <li class="#">
-                    <a href="#">
+                <li class="{{ set_active(['kontak', 'kontak/*']) }}">
+                    <a href="{{ url('/kontak') }}">
                         <i class="fa fa-book"></i> <span>Kontak</span>
                     </a>
                 </li>
