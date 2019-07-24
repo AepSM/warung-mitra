@@ -21,6 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('produk', 'ProdukController');
+
+    Route::get('kategori/{id}/delete', 'KategoriController@hapus')->name('kategori.hapus');
     Route::resource('kategori', 'KategoriController');
+
     Route::resource('kontak', 'KontakController');
 });

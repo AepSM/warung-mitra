@@ -29,7 +29,7 @@
         <![endif]-->
 
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-green sidebar-mini">
         <div class="wrapper">
         
             @include('layouts.topbar')
@@ -42,7 +42,7 @@
                 @yield('content')
 
             </div>
-        <footer class="main-footer">
+            <footer class="main-footer">
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 2.4.0
                 </div>
@@ -62,8 +62,6 @@
         <script src="{{ asset('adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         <!-- AdminLTE App -->
         <script src="{{ asset('adminlte/dist/js/adminlte.min.js') }}"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="{{ asset('adminlte/dist/js/pages/dashboard.js') }}"></script>
 
         @yield('script')
     </body>
