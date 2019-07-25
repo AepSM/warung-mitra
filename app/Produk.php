@@ -3,25 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Produk extends Model
 {
     use SoftDeletes;
 
     protected $fillable = [
-        'nama', 
-        'kondisi_id',
+        'nama',
         'kategori_id',
         'berat',
         'merek',
         'deskripsi',
         'stok',
         'harga',
-        'gambar1',
-        'gambar2',
-        'gambar3',
-        'terjual',
-        'dilihat'
+        'gambar1'
     ];
 
     public function data_kondisi()

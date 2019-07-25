@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('produk/{id}/delete', 'ProdukController@hapus')->name('produk.hapus');
     Route::resource('produk', 'ProdukController');
 
     Route::get('kategori/{id}/delete', 'KategoriController@hapus')->name('kategori.hapus');

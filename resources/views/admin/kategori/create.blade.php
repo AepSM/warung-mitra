@@ -33,7 +33,7 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control {{ $errors->first('nama') ? "is-invalid" : "" }}" name="nama">
+                                    <input type="text" class="form-control {{ $errors->first('nama') ? "is-invalid" : "" }}" name="nama" autofocus>
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('nama')}}</p>
                                     </div>

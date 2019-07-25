@@ -16,8 +16,8 @@ class CreateProduksTable extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nama', 100)->nullable();
-            $table->tinyInteger('kondisi_id');
-            $table->tinyInteger('kategori_id');
+            $table->tinyInteger('kondisi_id')->nullable();
+            $table->tinyInteger('kategori_id')->nullable();
             $table->integer('berat')->unsigned()->nullable();
             $table->string('merek', 50)->nullable();
             $table->text('deskripsi')->nullable();
