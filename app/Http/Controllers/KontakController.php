@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Kontak;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class KontakController extends Controller
 {
@@ -13,7 +15,9 @@ class KontakController extends Controller
      */
     public function index()
     {
-        //
+        $kontaks = Kontak::get();
+
+        return view('admin.kontak.index', ['kontaks' => $kontaks]);
     }
 
     /**
@@ -23,7 +27,7 @@ class KontakController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.kontak.create');
     }
 
     /**
@@ -34,7 +38,31 @@ class KontakController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \Validator::make($request->all(), [
+            "nama" => "required|max:50",
+            "keterangan" => "required",
+            "link" => "required",
+            "gambar" => "required"
+        ])->validate();
+
+        $image_name = null; 
+        if ($request->hasFile('gambar')) {
+            $image = $request->file('gambar');
+            $image_name = 'kontak_' . time() . '.' . $image->getClientOriginalExtension();
+            $path = public_path('/img');
+            $image->move($path, $image_name);
+        }
+
+        $kontaks = Kontak::create([
+            "nama" => $request->nama,
+            "keterangan" => $request->keterangan,
+            "link" => $request->link,
+            "gambar" => $image_name
+        ]);
+
+        $request->session()->flash('status', 'Data berhasil disimpan');
+
+        return redirect()->route('kontak.create');
     }
 
     /**
@@ -56,7 +84,9 @@ class KontakController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kontak = Kontak::find($id);
+
+        return view('admin.kontak.edit', ['kontak' => $kontak]);
     }
 
     /**
@@ -68,7 +98,34 @@ class KontakController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        \Validator::make($request->all(), [
+            "nama" => "required",
+            "keterangan" => "required",
+            "link" => "required"
+        ])->validate();
+
+        $kontak = Kontak::find($id);
+        $kontak->nama = $request->nama;
+        $kontak->keterangan = $request->keterangan;
+        $kontak->link = $request->link;
+
+        if ($request->hasFile('gambar')) {
+            $destinationPath = public_path('/img');
+            File::delete($destinationPath . '/' . $kontak->gambar);
+
+            $image = $request->file('gambar');
+            $image_name = 'kontak_' . time() . '.' . $image->getClientOriginalExtension();
+            $path = public_path('/img');
+            $image->move($path, $image_name);
+
+            $kontak->gambar1 = $image_name;
+        }
+
+        $kontak->save();
+
+        $request->session()->flash('status', 'Data berhasil diubah');
+        
+        return redirect()->route('kontak.edit', ['id' => $id]);
     }
 
     /**
@@ -80,5 +137,16 @@ class KontakController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function hapus(Request $request, $id)
+    {
+        $kontak = Kontak::find($id);
+        
+        $kontak->delete();
+
+        $request->session()->flash('status', 'Data berhasil dihapus');
+        
+        return redirect()->route('kontak.index');
     }
 }

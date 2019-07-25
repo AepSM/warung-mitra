@@ -71,7 +71,7 @@ class ProdukController extends Controller
             "gambar1" => $image_name
         ]);
 
-        $request->session()->flash('sukses', 'Data berhasil disimpan');
+        $request->session()->flash('status', 'Data berhasil disimpan');
 
         return redirect()->route('produk.create', ['kategoris' => $kategoris]);
     }
