@@ -46,6 +46,11 @@
                         <i class="fa fa-book"></i> <span>Kontak</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['kontak', 'kontak/*']) }}">
+                    <a href="{{ url('/kontak') }}">
+                        <i class="fa fa-book"></i> <span>Transaksi</span>
+                    </a>
+                </li>
             </ul>
         </section>
         <!-- /.sidebar -->
