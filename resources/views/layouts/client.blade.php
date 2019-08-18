@@ -11,218 +11,331 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Warung Mitra</title>
         
-        <!-- Google Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-        
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="{{ asset('client/css/bootstrap.min.css') }}">
-        
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="{{ asset('client/css/font-awesome.min.css') }}">
-        
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ asset('client/css/owl.carousel.css') }}">
-        <link rel="stylesheet" href="{{ asset('client/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('client/css/responsive.css') }}">
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <!-- jQuery -->
+        <script src="{{ asset('client/js/jquery-2.0.0.min.js') }}" type="text/javascript"></script>
+
+        <!-- Bootstrap4 files-->
+        <script src="{{ asset('client/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+        <link href="{{ asset('client/css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+
+        <!-- Font awesome 5 -->
+        <link href="{{ asset('client/fonts/fontawesome/css/fontawesome-all.min.css') }}" type="text/css" rel="stylesheet">
+
+        <!-- plugin: owl carousel  -->
+        <link href="{{ asset('client/plugins/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('client/plugins/owlcarousel/assets/owl.theme.default.css') }}" rel="stylesheet">
+        <script src="{{ asset('client/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
+
+        <!-- custom style -->
+        <link href="{{ asset('client/css/ui.css') }}" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('client/css/responsive.css') }}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+        <!-- custom javascript -->
+        <script src="{{ asset('client/js/script.js') }}" type="text/javascript"></script>
+
+        <script type="text/javascript">
+        /// some script
+
+        // jquery ready start
+        $(document).ready(function() {
+            // jQuery code
+
+        }); 
+        // jquery end
+        </script>
     </head>
     <body>
-    
-        <div class="header-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="user-menu">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
-                                <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                                <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-                                <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                                <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
-                            </ul>
+        <header class="section-header">
+            <section class="header-main">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5-24 col-sm-5 col-4">
+                            <div class="brand-wrap">
+                                <img class="logo" src="{{ asset('client/images/logo-dark.png') }}">
+                                <h2 class="logo-text">LOGO</h2>
+                            </div> <!-- brand-wrap.// -->
                         </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="header-right">
-                            <ul class="list-unstyled list-inline">
-                                <li class="dropdown dropdown-small">
-                                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">currency :</span><span class="value">USD </span><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">USD</a></li>
-                                        <li><a href="#">INR</a></li>
-                                        <li><a href="#">GBP</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="dropdown dropdown-small">
-                                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span class="key">language :</span><span class="value">English </span><b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">English</a></li>
-                                        <li><a href="#">French</a></li>
-                                        <li><a href="#">German</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End header area -->
-        
-        <div class="site-branding-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="logo">
-                            <h1><a href="./"><img src="{{ asset('client/img/logo.png') }}"></a></h1>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-6">
-                        <div class="shopping-item">
-                            <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End site branding area -->
-        
-        <div class="mainmenu-area">
-            <div class="container">
-                <div class="row">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div> 
-                    <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li><a href="shop.html">Shop page</a></li>
-                            <li><a href="single-product.html">Single product</a></li>
-                            <li><a href="cart.html">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="#">Category</a></li>
-                            <li><a href="#">Others</a></li>
-                            <li><a href="#">Contact</a></li>
+                        <div class="col-lg-13-24 col-sm-12 order-3 order-lg-2">
+                            <form action="#">
+                                <div class="input-group w-100">
+                                    <select class="custom-select"  name="category_name">
+                                            <option value="">All type</option><option value="codex">Special</option>
+                                            <option value="comments">Only best</option>
+                                            <option value="content">Latest</option>
+                                    </select>
+                                    <input type="text" class="form-control" style="width:60%;" placeholder="Search">                        
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form> <!-- search-wrap .end// -->
+                        </div> <!-- col.// -->
+                        <div class="col-lg-6-24 col-sm-7 col-8  order-2  order-lg-3">
+                            <div class="d-flex justify-content-end">
+                                <div class="widget-header">
+                                    <small class="title text-muted">Welcome guest!</small>
+                                    <div> 
+                                        <a href="#">Sign in</a> <span class="dark-transp"> | </span>
+                                        <a href="#"> Register</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="widget-header border-left pl-3 ml-3">
+                                    <div class="icontext">
+                                        <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
+                                    </div>
+                                    <span class="badge badge-pill badge-danger notify">0</span>
+                                </a>
+                            </div> <!-- widgets-wrap.// -->
+                        </div> <!-- col.// -->
+                    </div> <!-- row.// -->
+                </div> <!-- container.// -->
+            </section> <!-- header-main .// -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                <div class="container"> 
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav" aria-controls="main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link pl-0" href="#"> <strong>All category</strong></a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Fashion</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Supermarket</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Electronics</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Baby &amp Toys</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Fitness sport</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                    <a class="dropdown-item" href="#">Foods and Drink</a>
+                                    <a class="dropdown-item" href="#">Home interior</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Category 1</a>
+                                    <a class="dropdown-item" href="#">Category 2</a>
+                                    <a class="dropdown-item" href="#">Category 3</a>
+                                </div>
+                            </li>
                         </ul>
-                    </div>  
+                    </div> <!-- collapse .// -->
+                </div> <!-- container .// -->
+            </nav>
+        </header> <!-- section-header.// -->
+        <section class="section-main bg padding-top-sm">
+            <div class="container">                
+                <div class="row-sm">
+                    <div class="col-md-8">
+                        <!-- ================= main slide ================= -->
+                        <div class="owl-init slider-main owl-carousel" data-items="1" data-dots="false" data-nav="true">
+                            <div class="item-slide">
+                                <img src="{{ asset('client/images/banners/slide1.jpg') }}">
+                            </div>
+                            <div class="item-slide rounded">
+                                <img src="{{ asset('client/images/banners/slide2.jpg') }}">
+                            </div>
+                            <div class="item-slide rounded">
+                                <img src="{{ asset('client/images/banners/slide3.jpg') }}">
+                            </div>
+                        </div>
+                        <!-- ============== main slidesow .end // ============= -->
+                
+                    </div> <!-- col.// -->
+                    <aside class="col-md-4">                
+                        <div class="card mb-3">
+                            <figure class="itemside">
+                                <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="{{ asset('client/images/items/1.jpg') }}"></div></div>
+                                <figcaption class="text-wrap align-self-center">
+                                    <h6 class="title">Group of products is here </h6>
+                                    <a href="#">More items</a>
+                                </figcaption>
+                            </figure>
+                        </div> <!-- card.// -->                
+                        <div class="card mb-3">
+                            <figure class="itemside">
+                                <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="{{ asset('client/images/items/2.jpg') }}"></div></div>
+                                <figcaption class="text-wrap align-self-center">
+                                    <h6 class="title">Group of products  is here </h6>
+                                    <a href="#">More items</a>
+                                </figcaption>
+                            </figure>
+                        </div> <!-- card.// -->                
+                        <div class="card">
+                            <figure class="itemside">
+                                <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="{{ asset('client/images/items/3.jpg') }}"></div></div>
+                                <figcaption class="text-wrap align-self-center">
+                                    <h6 class="title">Group of products is here </h6>
+                                    <a href="#">More items</a>
+                                </figcaption>
+                            </figure>
+                        </div> <!-- card.// -->                
+                    </aside>
                 </div>
+            </div> <!-- container .//  -->
+        </section>
+        <!-- ========================= SECTION MAIN END// ========================= -->
+<!-- ========================= SECTION CONTENT ========================= -->
+        <section class="section-content bg padding-y-sm">
+            <div class="container">
+                <div class="row-sm">
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/1.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Good item name</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$1280</span>
+                                    <del class="price-old">$1980</del>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/2.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/3.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Good item name</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/4.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Good item name</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/5.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">Good item name</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$1280</span>
+                                    <del class="price-old">$1980</del>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/6.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/7.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/1.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/2.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$1280</span>
+                                    <del class="price-old">$1980</del>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/3.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/4.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                    <div class="col-md-2 col-sm-6">
+                        <figure class="card card-product">
+                            <div class="img-wrap"> <img src="{{ asset('client/images/items/6.jpg') }}"></div>
+                            <figcaption class="info-wrap">
+                                <a href="#" class="title">The name of product</a>
+                                <div class="price-wrap">
+                                    <span class="price-new">$280</span>
+                                </div> <!-- price-wrap.// -->
+                            </figcaption>
+                        </figure> <!-- card // -->
+                    </div> <!-- col // -->
+                </div> <!-- row.// -->
             </div>
-        </div> <!-- End mainmenu area -->
+        </section>
         
         @yield('content')
         
-        <div class="footer-top-area">
-            <div class="zigzag-bottom"></div>
+        <!-- ========================= FOOTER ========================= -->
+        <footer class="section-footer bg2">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-about-us">
-                            <h2>u<span>Stora</span></h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi veritatis magni at?</p>
-                            <div class="footer-social">
-                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                                <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                            </div>
-                        </div>
+                <section class="footer-bottom row">
+                    <div class="col-sm-6"> 
+                        <p> Made with <3 <br>  by Vosidiy M.</p>
                     </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-menu">
-                            <h2 class="footer-wid-title">User Navigation </h2>
-                            <ul>
-                                <li><a href="#">My account</a></li>
-                                <li><a href="#">Order history</a></li>
-                                <li><a href="#">Wishlist</a></li>
-                                <li><a href="#">Vendor contact</a></li>
-                                <li><a href="#">Front page</a></li>
-                            </ul>                        
-                        </div>
+                    <div class="col-sm-6">
+                        <p class="text-sm-right">
+                            Copyright &copy 2018 <br>
+                            <a href="http://bootstrap-ecommerce.com">Bootstrap-ecommerce UI kit</a>
+                        </p>
                     </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-menu">
-                            <h2 class="footer-wid-title">Categories</h2>
-                            <ul>
-                                <li><a href="#">Mobile Phone</a></li>
-                                <li><a href="#">Home accesseries</a></li>
-                                <li><a href="#">LED TV</a></li>
-                                <li><a href="#">Computer</a></li>
-                                <li><a href="#">Gadets</a></li>
-                            </ul>                        
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-3 col-sm-6">
-                        <div class="footer-newsletter">
-                            <h2 class="footer-wid-title">Newsletter</h2>
-                            <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your inbox!</p>
-                            <div class="newsletter-form">
-                                <form action="#">
-                                    <input type="email" placeholder="Type your email">
-                                    <input type="submit" value="Subscribe">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End footer top area -->
-        
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="copyright">
-                            <p>&copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="footer-card-icon">
-                            <i class="fa fa-cc-discover"></i>
-                            <i class="fa fa-cc-mastercard"></i>
-                            <i class="fa fa-cc-paypal"></i>
-                            <i class="fa fa-cc-visa"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- End footer bottom area -->
-    
-        <!-- Latest jQuery form server -->
-        <script src="https://code.jquery.com/jquery.min.js"></script>
-        
-        <!-- Bootstrap JS form CDN -->
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-        
-        <!-- jQuery sticky menu -->
-        <script src="{{ asset('client/js/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('client/js/jquery.sticky.js') }}"></script>
-        
-        <!-- jQuery easing -->
-        <script src="{{ asset('client/js/jquery.easing.1.3.min.js') }}"></script>
-        
-        <!-- Main Script -->
-        <script src="{{ asset('client/js/main.js') }}"></script>
-        
-        <!-- Slider -->
-        <script type="text/javascript" src="{{ asset('client/js/bxslider.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('client/js/script.slider.js') }}"></script>
+                </section> <!-- //footer-top -->
+            </div><!-- //container -->
+        </footer>
+        <!-- ========================= FOOTER END // ========================= -->
     </body>
 </html>
