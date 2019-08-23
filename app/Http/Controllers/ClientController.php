@@ -10,4 +10,9 @@ class ClientController extends Controller
     {
         return view('pages.home');
     }
+
+    public function detail($id)
+    {
+        return view('pages.detailProduk');
+    }
 }

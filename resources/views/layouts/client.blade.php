@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-	ustora by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -27,6 +22,11 @@
         <link href="{{ asset('client/plugins/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
         <link href="{{ asset('client/plugins/owlcarousel/assets/owl.theme.default.css') }}" rel="stylesheet">
         <script src="{{ asset('client/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
+
+        <!-- plugin: slickslider -->
+        <link href="{{ asset('client/plugins/slickslider/slick.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('client/plugins/slickslider/slick-theme.css') }}" rel="stylesheet" type="text/css" />
+        <script src="{{ asset('client/plugins/slickslider/slick.min.js') }}"></script>
 
         <!-- custom style -->
         <link href="{{ asset('client/css/ui.css') }}" rel="stylesheet" type="text/css"/>
@@ -60,11 +60,6 @@
                         <div class="col-lg-13-24 col-sm-12 order-3 order-lg-2">
                             <form action="#">
                                 <div class="input-group w-100">
-                                    <select class="custom-select"  name="category_name">
-                                            <option value="">All type</option><option value="codex">Special</option>
-                                            <option value="comments">Only best</option>
-                                            <option value="content">Latest</option>
-                                    </select>
                                     <input type="text" class="form-control" style="width:60%;" placeholder="Search">                        
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="submit">
@@ -123,214 +118,70 @@
                 </div> <!-- container .// -->
             </nav>
         </header> <!-- section-header.// -->
-        <section class="section-main bg padding-top-sm">
-            <div class="container">                
-                <div class="row-sm">
-                    <div class="col-md-8">
-                        <!-- ================= main slide ================= -->
-                        <div class="owl-init slider-main owl-carousel" data-items="1" data-dots="false" data-nav="true">
-                            <div class="item-slide">
-                                <img src="{{ asset('client/images/banners/slide1.jpg') }}">
-                            </div>
-                            <div class="item-slide rounded">
-                                <img src="{{ asset('client/images/banners/slide2.jpg') }}">
-                            </div>
-                            <div class="item-slide rounded">
-                                <img src="{{ asset('client/images/banners/slide3.jpg') }}">
-                            </div>
-                        </div>
-                        <!-- ============== main slidesow .end // ============= -->
-                
-                    </div> <!-- col.// -->
-                    <aside class="col-md-4">                
-                        <div class="card mb-3">
-                            <figure class="itemside">
-                                <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="{{ asset('client/images/items/1.jpg') }}"></div></div>
-                                <figcaption class="text-wrap align-self-center">
-                                    <h6 class="title">Group of products is here </h6>
-                                    <a href="#">More items</a>
-                                </figcaption>
-                            </figure>
-                        </div> <!-- card.// -->                
-                        <div class="card mb-3">
-                            <figure class="itemside">
-                                <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="{{ asset('client/images/items/2.jpg') }}"></div></div>
-                                <figcaption class="text-wrap align-self-center">
-                                    <h6 class="title">Group of products  is here </h6>
-                                    <a href="#">More items</a>
-                                </figcaption>
-                            </figure>
-                        </div> <!-- card.// -->                
-                        <div class="card">
-                            <figure class="itemside">
-                                <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="{{ asset('client/images/items/3.jpg') }}"></div></div>
-                                <figcaption class="text-wrap align-self-center">
-                                    <h6 class="title">Group of products is here </h6>
-                                    <a href="#">More items</a>
-                                </figcaption>
-                            </figure>
-                        </div> <!-- card.// -->                
-                    </aside>
-                </div>
-            </div> <!-- container .//  -->
-        </section>
-        <!-- ========================= SECTION MAIN END// ========================= -->
-<!-- ========================= SECTION CONTENT ========================= -->
-        <section class="section-content bg padding-y-sm">
-            <div class="container">
-                <div class="row-sm">
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/1.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Good item name</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$1280</span>
-                                    <del class="price-old">$1980</del>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/2.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/3.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Good item name</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/4.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Good item name</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/5.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">Good item name</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$1280</span>
-                                    <del class="price-old">$1980</del>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/6.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/7.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/1.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/2.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$1280</span>
-                                    <del class="price-old">$1980</del>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/3.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/4.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                    <div class="col-md-2 col-sm-6">
-                        <figure class="card card-product">
-                            <div class="img-wrap"> <img src="{{ asset('client/images/items/6.jpg') }}"></div>
-                            <figcaption class="info-wrap">
-                                <a href="#" class="title">The name of product</a>
-                                <div class="price-wrap">
-                                    <span class="price-new">$280</span>
-                                </div> <!-- price-wrap.// -->
-                            </figcaption>
-                        </figure> <!-- card // -->
-                    </div> <!-- col // -->
-                </div> <!-- row.// -->
-            </div>
-        </section>
         
         @yield('content')
         
         <!-- ========================= FOOTER ========================= -->
-        <footer class="section-footer bg2">
+        <footer class="section-footer bg-secondary">
             <div class="container">
-                <section class="footer-bottom row">
+                <section class="footer-top padding-top">
+                    <div class="row">
+                        <aside class="col-sm-3 col-md-3 white">
+                            <h5 class="title">Customer Services</h5>
+                            <ul class="list-unstyled">
+                                <li> <a href="#">Help center</a></li>
+                                <li> <a href="#">Money refund</a></li>
+                                <li> <a href="#">Terms and Policy</a></li>
+                                <li> <a href="#">Open dispute</a></li>
+                            </ul>
+                        </aside>
+                        <aside class="col-sm-3  col-md-3 white">
+                            <h5 class="title">My Account</h5>
+                            <ul class="list-unstyled">
+                                <li> <a href="#"> User Login </a></li>
+                                <li> <a href="#"> User register </a></li>
+                                <li> <a href="#"> Account Setting </a></li>
+                                <li> <a href="#"> My Orders </a></li>
+                                <li> <a href="#"> My Wishlist </a></li>
+                            </ul>
+                        </aside>
+                        <aside class="col-sm-3  col-md-3 white">
+                            <h5 class="title">About</h5>
+                            <ul class="list-unstyled">
+                                <li> <a href="#"> Our history </a></li>
+                                <li> <a href="#"> How to buy </a></li>
+                                <li> <a href="#"> Delivery and payment </a></li>
+                                <li> <a href="#"> Advertice </a></li>
+                                <li> <a href="#"> Partnership </a></li>
+                            </ul>
+                        </aside>
+                        <aside class="col-sm-3">
+                            <article class="white">
+                                <h5 class="title">Contacts</h5>
+                                <p>
+                                    <strong>Phone: </strong> +123456789 <br> 
+                                    <strong>Fax:</strong> +123456789
+                                </p>
+
+                                <div class="btn-group white">
+                                    <a class="btn btn-facebook" title="Facebook" target="_blank" href="#"><i class="fab fa-facebook-f  fa-fw"></i></a>
+                                    <a class="btn btn-instagram" title="Instagram" target="_blank" href="#"><i class="fab fa-instagram  fa-fw"></i></a>
+                                    <a class="btn btn-youtube" title="Youtube" target="_blank" href="#"><i class="fab fa-youtube  fa-fw"></i></a>
+                                    <a class="btn btn-twitter" title="Twitter" target="_blank" href="#"><i class="fab fa-twitter  fa-fw"></i></a>
+                                </div>
+                            </article>
+                        </aside>
+                    </div> <!-- row.// -->
+                    <br> 
+                </section>
+                <section class="footer-bottom row border-top-white">
                     <div class="col-sm-6"> 
-                        <p> Made with <3 <br>  by Vosidiy M.</p>
+                        <p class="text-white-50"> Made with <3 <br>  by Vosidiy M.</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="text-sm-right">
-                            Copyright &copy 2018 <br>
-                            <a href="http://bootstrap-ecommerce.com">Bootstrap-ecommerce UI kit</a>
+                        <p class="text-md-right text-white-50">
+                            Copyright &copy  <br>
+                            <a href="http://bootstrap-ecommerce.com" class="text-white-50">Bootstrap-ecommerce UI kit</a>
                         </p>
                     </div>
                 </section> <!-- //footer-top -->

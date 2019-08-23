@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'ClientController@index');
+Route::get('/detail/{id}', 'ClientController@detail');
 
 Auth::routes();
 
