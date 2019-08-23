@@ -133,7 +133,7 @@
                 <figure class="card card-product">
                     <div class="img-wrap"> <img src="{{ asset('client/images/items/6.jpg') }}"></div>
                     <figcaption class="info-wrap">
-                        <a href="#" class="title">The name of product</a>
+                        <a href="#" class="title">The name of product product product</a>
                         <div class="price-wrap">
                             <span class="price-new">$280</span>
                         </div> <!-- price-wrap.// -->
@@ -188,30 +188,33 @@
             <div class="col-md-2 col-sm-6">
                 <figure class="card card-product">
                     <div class="img-wrap"> <img src="{{ asset('client/images/items/4.jpg') }}"></div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">The name of product</a>
+                    <figcaption class="info-wrap" style="height: 100px;">
+                        <div style="height: 50px;" >
+                            <a href="#" class="title">The name of product</a>
+                        </div>
                         <div class="price-wrap">
                             <span class="price-new">$280</span>
                         </div> <!-- price-wrap.// -->
                     </figcaption>
                 </figure> <!-- card // -->
             </div> <!-- col // -->
-            <div class="col-md-2 col-sm-6">
-                <figure class="card card-product">
-                    <div class="img-wrap"> <img src="{{ asset('client/images/items/6.jpg') }}"></div>
-                    <figcaption class="info-wrap">
-                        <a href="#" class="title">The name of product</a>
-                        <div class="price-wrap">
-                            <div class="float-left">
-                                <span class="price-new">$280</span>
+            <a href="#">
+                <div class="col-md-2 col-sm-6">
+                    <figure class="card card-product">
+                        <div class="img-wrap"> <img src="{{ asset('client/images/items/6.jpg') }}"></div>
+                        <figcaption class="info-wrap" style="height: 100px;">
+                            <div style="height: 50px;" >
+                                <a href="#" class="title text-sm">The name of product product product</a>
                             </div>
-                            <div class="float-right">
-                                <button class="btn btn-warning btn-sm text-white">Detail</button>
-                            </div>
-                        </div> <!-- price-wrap.// -->
-                    </figcaption>
-                </figure> <!-- card // -->
-            </div> <!-- col // -->
+                            <div class="price-wrap">
+                                <div class="float-left">
+                                    <span class="price-new">$280</span>
+                                </div>
+                            </div> <!-- price-wrap.// -->
+                        </figcaption>
+                    </figure> <!-- card // -->
+                </div> <!-- col // -->
+            </a>
         </div> <!-- row.// -->
     </div>
 </section>

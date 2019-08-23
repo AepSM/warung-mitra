@@ -4,14 +4,6 @@
 <!-- ========================= SECTION CONTENT ========================= -->
 <section class="section-content bg padding-y-sm">
     <div class="container">
-        <nav class="mb-3">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Category name</a></li>
-                <li class="breadcrumb-item"><a href="#">Sub category</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Items</li>
-            </ol> 
-        </nav>    
         <div class="row">
             <div class="col-xl-10 col-md-9 col-sm-12">
                 <main class="card">
@@ -20,14 +12,14 @@
                             <article class="gallery-wrap"> 
                                 <div class="img-big-wrap">
                                     <div> 
-                                        <a href="images/items/1.jpg" data-fancybox=""><img src="images/items/1.jpg"></a>
+                                        <a href="images/items/1.jpg" data-fancybox=""><img src="{{ asset('client/images/items/1.jpg') }}"></a>
                                     </div>
                                 </div> <!-- slider-product.// -->
                                 <div class="img-small-wrap">
-                                    <div class="item-gallery"> <img src="images/items/1.jpg"></div>
-                                    <div class="item-gallery"> <img src="images/items/2.jpg"></div>
-                                    <div class="item-gallery"> <img src="images/items/3.jpg"></div>
-                                    <div class="item-gallery"> <img src="images/items/4.jpg"></div>
+                                    <div class="item-gallery"> <img src="{{ asset('client/images/items/1.jpg') }}"></div>
+                                    <div class="item-gallery"> <img src="{{ asset('client/images/items/2.jpg') }}"></div>
+                                    <div class="item-gallery"> <img src="{{ asset('client/images/items/3.jpg') }}"></div>
+                                    <div class="item-gallery"> <img src="{{ asset('client/images/items/4.jpg') }}"></div>
                                 </div> <!-- slider-nav.// -->
                             </article> <!-- gallery-wrap .end// -->
                         </aside>
@@ -167,7 +159,7 @@
                     <div class="card-body row">
                         <div class="col-md-12 col-sm-3">
                             <figure class="item border-bottom mb-3">
-                                    <a href="#" class="img-wrap"> <img src="images/items/2.jpg" class="img-md"></a>
+                                    <a href="#" class="img-wrap"> <img src="{{ asset('client/images/items/2.jpg') }}" class="img-md"></a>
                                     <figcaption class="info-wrap">
                                         <a href="#" class="title">The name of product</a>
                                         <div class="price-wrap mb-3">
@@ -178,7 +170,7 @@
                         </div> <!-- col.// -->
                         <div class="col-md-12 col-sm-3">
                             <figure class="item border-bottom mb-3">
-                                    <a class="img-wrap"> <img src="images/items/3.jpg" class="img-md"></a>
+                                    <a class="img-wrap"> <img src="{{ asset('client/images/items/3.jpg') }}" class="img-md"></a>
                                     <figcaption class="info-wrap">
                                         <a href="#" href="#" class="title">The name of product</a>
                                         <div class="price-wrap mb-3">
@@ -189,7 +181,7 @@
                         </div> <!-- col.// -->
                         <div class="col-md-12 col-sm-3">
                             <figure class="item border-bottom mb-3">
-                                    <a href="#" class="img-wrap"> <img src="images/items/4.jpg" class="img-md"></a>
+                                    <a href="#" class="img-wrap"> <img src="{{ asset('client/images/items/4.jpg') }}" class="img-md"></a>
                                     <figcaption class="info-wrap">
                                         <a href="#" class="title">The name of product</a>
                                         <div class="price-wrap mb-3">

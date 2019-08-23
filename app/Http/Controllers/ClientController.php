@@ -15,4 +15,9 @@ class ClientController extends Controller
     {
         return view('pages.detailProduk');
     }
+
+    public function order($code)
+    {
+        return view('pages.order');
+    }
 }

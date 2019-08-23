@@ -13,6 +13,7 @@
 
 Route::get('/', 'ClientController@index');
 Route::get('/detail/{id}', 'ClientController@detail');
+Route::get('/order/{code}', 'ClientController@order');
 
 Auth::routes();
 
