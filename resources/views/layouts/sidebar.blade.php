@@ -12,17 +12,6 @@
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
-            <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </form>
-            <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MENU NAVIGASI</li>
@@ -36,14 +25,19 @@
                         <i class="fa fa-book"></i> <span>Kategori</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['kontak', 'kontak/*']) }}">
+                    <a href="{{ url('/kontak') }}">
+                        <i class="fa fa-book"></i> <span>Kontak</span>
+                    </a>
+                </li>
                 <li class="{{ set_active(['produk', 'produk/*']) }}">
                     <a href="{{ url('/produk') }}">
                         <i class="fa fa-book"></i> <span>Produk</span>
                     </a>
                 </li>
-                <li class="{{ set_active(['kontak', 'kontak/*']) }}">
-                    <a href="{{ url('/kontak') }}">
-                        <i class="fa fa-book"></i> <span>Kontak</span>
+                <li class="{{ set_active(['slider', 'slider/*']) }}">
+                    <a href="{{ url('/slider') }}">
+                        <i class="fa fa-book"></i> <span>Slider</span>
                     </a>
                 </li>
                 <li class="{{ set_active(['kontak', 'kontak/*']) }}">

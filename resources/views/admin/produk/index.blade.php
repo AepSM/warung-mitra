@@ -1,6 +1,9 @@
 @extends('layouts.admin')
 
 @section('style')
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ asset('adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+
 <style>
     thead {
         background-color: #00a65a;
@@ -92,4 +95,24 @@
     </div>
 </section>
 <!-- /.content -->
+@endsection
+
+@section('script')
+<!-- DataTables -->
+<script src="{{ asset('adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+        'paging'      : true,
+        'lengthChange': false,
+        'searching'   : true,
+        'ordering'    : true,
+        'info'        : true,
+        'autoWidth'   : false
+        })
+    })
+</script>
 @endsection

@@ -33,57 +33,61 @@
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
-                                    <input type="text" class="form-control {{ $errors->first('nama') ? "is-invalid" : "" }}" name="nama">
+                                    <input type="text" class="form-control {{ $errors->first('nama') ? "is-invalid" : "" }}" name="nama" value="{{ old('nama') }}">
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('nama')}}</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="kategori">Kategori</label>
-                                    <select class="form-control" name="kategori" id="kategori">
+                                    <select class="form-control {{ $errors->first('kategori') ? "is-invalid" : "" }}" name="kategori" id="kategori">
+                                        <option value="">--Pilih Kategori--</option>
                                         @foreach ($kategoris as $kategori)
                                             <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>                                            
                                         @endforeach
                                     </select>
+                                    <div class="invalid-feedback">
+                                        <p style="color: red;">{{$errors->first('kategori')}}</p>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="berat">Berat</label>
-                                    <input type="text" class="form-control {{ $errors->first('berat') ? "is-invalid" : "" }}" name="berat">
+                                    <input type="text" class="form-control {{ $errors->first('berat') ? "is-invalid" : "" }}" name="berat" value="{{ old('berat') }}">
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('berat')}}</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="merek">Merek</label>
-                                    <input type="text" class="form-control {{ $errors->first('merek') ? "is-invalid" : "" }}" name="merek">
+                                    <input type="text" class="form-control {{ $errors->first('merek') ? "is-invalid" : "" }}" name="merek" value="{{ old('merek') }}">
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('merek')}}</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
-                                    <textarea type="text" class="form-control {{ $errors->first('deskripsi') ? "is-invalid" : "" }}" name="deskripsi"></textarea>
+                                    <textarea type="text" class="form-control {{ $errors->first('deskripsi') ? "is-invalid" : "" }}" name="deskripsi">{{ old('deskripsi') }}</textarea>
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('deskripsi')}}</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="stok">Stok</label>
-                                    <input type="text" class="form-control {{ $errors->first('stok') ? "is-invalid" : "" }}" name="stok">
+                                    <input type="text" class="form-control {{ $errors->first('stok') ? "is-invalid" : "" }}" name="stok" value="{{ old('stok') }}">
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('stok')}}</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="harga">Harga</label>
-                                    <input type="text" class="form-control {{ $errors->first('harga') ? "is-invalid" : "" }}" name="harga">
+                                    <input type="text" class="form-control {{ $errors->first('harga') ? "is-invalid" : "" }}" name="harga" value="{{ old('harga') }}">
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('harga')}}</p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="gambar">Gambar</label>
-                                    <input type="file" class="form-control {{ $errors->first('gambar') ? "is-invalid" : "" }}" name="gambar">
+                                    <input type="file" class="form-control {{ $errors->first('gambar') ? "is-invalid" : "" }}" name="gambar" value="{{ old('gambar') }}">
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('gambar')}}</p>
                                     </div>

@@ -42,6 +42,7 @@ class ProdukController extends Controller
     {
         \Validator::make($request->all(), [
             "nama" => "required|max:50",
+            "kategori" => "required",
             "berat" => "required|numeric",
             "merek" => "required",
             "deskripsi" => "required",
@@ -116,8 +117,7 @@ class ProdukController extends Controller
             "merek" => "required",
             "deskripsi" => "required",
             "stok" => "required|numeric",
-            "harga" => "required|numeric",
-            "gambar" => "required"
+            "harga" => "required|numeric"
         ])->validate();
 
         $produk = Produk::find($id);

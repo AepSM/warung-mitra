@@ -20,12 +20,15 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('produk/{id}/delete', 'ProdukController@hapus')->name('produk.hapus');
-    Route::resource('produk', 'ProdukController');
-
     Route::get('kategori/{id}/delete', 'KategoriController@hapus')->name('kategori.hapus');
     Route::resource('kategori', 'KategoriController');
 
     Route::get('kontak/{id}/delete', 'KontakController@hapus')->name('kontak.hapus');
     Route::resource('kontak', 'KontakController');
+
+    Route::get('produk/{id}/delete', 'ProdukController@hapus')->name('produk.hapus');
+    Route::resource('produk', 'ProdukController');
+
+    Route::get('slider/{id}/delete', 'SliderController@hapus')->name('slider.hapus');
+    Route::resource('slider', 'SliderController');
 });
