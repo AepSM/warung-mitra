@@ -145,6 +145,9 @@ class KontakController extends Controller
         
         $kontak->delete();
 
+        $destinationPath = public_path('/img');
+        File::delete($destinationPath . '/' . $kontak->gambar);
+
         $request->session()->flash('status', 'Data berhasil dihapus');
         
         return redirect()->route('kontak.index');

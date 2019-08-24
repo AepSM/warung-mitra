@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Produk;
-use App\Kategori;
+use App\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
-class ProdukController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,8 @@ class ProdukController extends Controller
      */
     public function index()
     {
-        $produks = Produk::with('data_kategori')->get();
-
-        return view('admin.produk.index', ['produks' => $produks]);
+        $sliders = Slider::get();
+        return view('admin.slider.index', ['sliders' => $sliders]);
     }
 
     /**
@@ -28,8 +26,7 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        $kategoris = Kategori::get();
-        return view('admin.produk.create', ['kategoris' => $kategoris]);
+        return view('admin.slider.create');
     }
 
     /**
@@ -42,39 +39,27 @@ class ProdukController extends Controller
     {
         \Validator::make($request->all(), [
             "nama" => "required|max:50",
-            "kategori" => "required",
-            "berat" => "required|numeric",
-            "merek" => "required",
-            "deskripsi" => "required",
-            "stok" => "required|numeric",
-            "harga" => "required|numeric",
+            "link" => "required",
             "gambar" => "required"
         ])->validate();
 
         $image_name = null; 
         if ($request->hasFile('gambar')) {
             $image = $request->file('gambar');
-            $image_name = 'produk_' . time() . '.' . $image->getClientOriginalExtension();
+            $image_name = 'slider_' . time() . '.' . $image->getClientOriginalExtension();
             $path = public_path('/img');
             $image->move($path, $image_name);
         }
 
-        $kategoris = Kategori::get();
-
-        $produks = Produk::create([
+        $sliders = Slider::create([
             "nama" => $request->nama,
-            "kategori_id" => $request->kategori,
-            "berat" => $request->berat,
-            "merek" => $request->merek,
-            "deskripsi" => $request->deskripsi,
-            "stok" => $request->stok,
-            "harga" => $request->harga,
-            "gambar1" => $image_name
+            "link" => $request->link,
+            "gambar" => $image_name
         ]);
 
         $request->session()->flash('status', 'Data berhasil disimpan');
 
-        return redirect()->route('produk.create', ['kategoris' => $kategoris]);
+        return redirect()->route('slider.create');
     }
 
     /**
@@ -96,10 +81,9 @@ class ProdukController extends Controller
      */
     public function edit($id)
     {
-        $kategoris = Kategori::get();
-        $produk = Produk::find($id);
+        $slider = Slider::find($id);
 
-        return view('admin.produk.edit', ['produk' => $produk, 'kategoris' => $kategoris]);
+        return view('admin.slider.edit', ['slider' => $slider]);
     }
 
     /**
@@ -112,40 +96,31 @@ class ProdukController extends Controller
     public function update(Request $request, $id)
     {
         \Validator::make($request->all(), [
-            "nama" => "required|max:50",
-            "berat" => "required|numeric",
-            "merek" => "required",
-            "deskripsi" => "required",
-            "stok" => "required|numeric",
-            "harga" => "required|numeric"
+            "nama" => "required",
+            "link" => "required"
         ])->validate();
 
-        $produk = Produk::find($id);
-        $produk->nama = $request->nama;
-        $produk->kategori_id = $request->kategori;
-        $produk->berat = $request->berat;
-        $produk->merek = $request->merek;
-        $produk->deskripsi = $request->deskripsi;
-        $produk->stok = $request->stok;
-        $produk->harga = $request->harga;
+        $slider = Slider::find($id);
+        $slider->nama = $request->nama;
+        $slider->link = $request->link;
 
         if ($request->hasFile('gambar')) {
             $destinationPath = public_path('/img');
-            File::delete($destinationPath . '/' . $produk->gambar1);
+            File::delete($destinationPath . '/' . $slider->gambar);
 
             $image = $request->file('gambar');
-            $image_name = 'produk_' . time() . '.' . $image->getClientOriginalExtension();
+            $image_name = 'slider_' . time() . '.' . $image->getClientOriginalExtension();
             $path = public_path('/img');
             $image->move($path, $image_name);
 
-            $produk->gambar1 = $image_name;
+            $slider->gambar = $image_name;
         }
 
-        $produk->save();
+        $slider->save();
 
         $request->session()->flash('status', 'Data berhasil diubah');
         
-        return redirect()->route('produk.edit', ['id' => $id]);
+        return redirect()->route('slider.edit', ['id' => $id]);
     }
 
     /**
@@ -161,15 +136,15 @@ class ProdukController extends Controller
 
     public function hapus(Request $request, $id)
     {
-        $produk = Produk::find($id);
+        $slider = Slider::find($id);
         
-        $produk->delete();
-
+        $slider->delete();
+        
         $destinationPath = public_path('/img');
-        File::delete($destinationPath . '/' . $produk->gambar1);
+        File::delete($destinationPath . '/' . $slider->gambar);
 
         $request->session()->flash('status', 'Data berhasil dihapus');
         
-        return redirect()->route('produk.index');
+        return redirect()->route('slider.index');
     }
 }
