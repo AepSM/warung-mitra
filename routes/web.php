@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'ClientController@index');
+Route::get('/tampilProduk', 'ClientController@tampilProduk');
+Route::get('/tampilSlider', 'ClientController@tampilSlider');
+Route::get('/tampilSliderSide', 'ClientController@tampilSliderSide');
 Route::get('/detail/{id}', 'ClientController@detail');
 Route::get('/order/{code}', 'ClientController@order');
 

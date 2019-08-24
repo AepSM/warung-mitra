@@ -73,9 +73,9 @@
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $produk->nama }}</td>
-                                            <td>{{ $produk->kategori_id }}</td>
+                                            <td>{{ $produk->data_kategori->nama }}</td>
                                             <td>{{ $produk->stok }}</td>
-                                            <td>{{ $produk->harga }}</td>
+                                            <td>Rp. {{ rupiah($produk->harga) }}</td>
                                             <td><img src="{{ asset('img/' . $produk->gambar1) }}" id="img_produk"></td>
                                             <td>
                                                 <div class="btn-group">

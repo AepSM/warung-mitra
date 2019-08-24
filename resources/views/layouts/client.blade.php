@@ -8,11 +8,6 @@
         
         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 
-        <!-- jQuery -->
-        <script src="{{ asset('client/js/jquery-2.0.0.min.js') }}" type="text/javascript"></script>
-
-        <!-- Bootstrap4 files-->
-        <script src="{{ asset('client/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
         <link href="{{ asset('client/css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
 
         <!-- Font awesome 5 -->
@@ -21,30 +16,16 @@
         <!-- plugin: owl carousel  -->
         <link href="{{ asset('client/plugins/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
         <link href="{{ asset('client/plugins/owlcarousel/assets/owl.theme.default.css') }}" rel="stylesheet">
-        <script src="{{ asset('client/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
 
         <!-- plugin: slickslider -->
         <link href="{{ asset('client/plugins/slickslider/slick.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('client/plugins/slickslider/slick-theme.css') }}" rel="stylesheet" type="text/css" />
-        <script src="{{ asset('client/plugins/slickslider/slick.min.js') }}"></script>
 
         <!-- custom style -->
         <link href="{{ asset('client/css/ui.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('client/css/responsive.css') }}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
 
-        <!-- custom javascript -->
-        <script src="{{ asset('client/js/script.js') }}" type="text/javascript"></script>
-
-        <script type="text/javascript">
-        /// some script
-
-        // jquery ready start
-        $(document).ready(function() {
-            // jQuery code
-
-        }); 
-        // jquery end
-        </script>
+        @yield('style')
     </head>
     <body>
         <header class="section-header">
@@ -188,5 +169,17 @@
             </div><!-- //container -->
         </footer>
         <!-- ========================= FOOTER END // ========================= -->
+
+        <!-- jQuery -->
+        <script src="{{ asset('client/js/jquery-2.0.0.min.js') }}" type="text/javascript"></script>
+
+        <!-- Bootstrap4 files-->
+        <script src="{{ asset('client/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('client/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('client/plugins/slickslider/slick.min.js') }}"></script>
+        <!-- custom javascript -->
+        <script src="{{ asset('client/js/script.js') }}" type="text/javascript"></script>
+
+        @yield('script')
     </body>
 </html>

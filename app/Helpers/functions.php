@@ -4,3 +4,8 @@
     function set_active($path, $active = 'active') {
         return call_user_func_array('Request::is', (array)$path) ? $active : '';
     }
+
+    function rupiah($angka){ 
+        $hasil =  number_format($angka,0, ',' , '.'); 
+        return $hasil; 
+    }
