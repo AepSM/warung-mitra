@@ -17,6 +17,8 @@ Route::get('/tampilSlider', 'ClientController@tampilSlider');
 Route::get('/tampilSliderSide', 'ClientController@tampilSliderSide');
 Route::get('/detail/{id}', 'ClientController@detail');
 Route::get('/order/{code}', 'ClientController@order');
+Route::get('/register_customer', 'ClientController@register')->name('register_customer');
+Route::get('/login_customer', 'ClientController@login')->name('login_customer');
 
 Auth::routes();
 

@@ -15,12 +15,12 @@
                                         <a href="images/items/1.jpg" data-fancybox=""><img src="{{ asset('client/images/items/1.jpg') }}"></a>
                                     </div>
                                 </div> <!-- slider-product.// -->
-                                <div class="img-small-wrap">
+                                {{-- <div class="img-small-wrap">
                                     <div class="item-gallery"> <img src="{{ asset('client/images/items/1.jpg') }}"></div>
                                     <div class="item-gallery"> <img src="{{ asset('client/images/items/2.jpg') }}"></div>
                                     <div class="item-gallery"> <img src="{{ asset('client/images/items/3.jpg') }}"></div>
                                     <div class="item-gallery"> <img src="{{ asset('client/images/items/4.jpg') }}"></div>
-                                </div> <!-- slider-nav.// -->
+                                </div> <!-- slider-nav.// --> --}}
                             </article> <!-- gallery-wrap .end// -->
                         </aside>
                         <aside class="col-sm-6">

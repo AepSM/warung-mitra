@@ -34,7 +34,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5-24 col-sm-5 col-4">
                             <div class="brand-wrap">
-                                <img class="logo" src="{{ asset('client/images/logo-dark.png') }}">
+                                <img class="logo" src="{{ asset('client/images/logos/wm-logo.png') }}">
                                 <h2 class="logo-text">LOGO</h2>
                             </div> <!-- brand-wrap.// -->
                         </div>
@@ -55,8 +55,8 @@
                                 <div class="widget-header">
                                     <small class="title text-muted">Welcome guest!</small>
                                     <div> 
-                                        <a href="#">Sign in</a> <span class="dark-transp"> | </span>
-                                        <a href="#"> Register</a>
+                                        <a href="{{ route('login_customer') }}">Sign in</a> <span class="dark-transp"> | </span>
+                                        <a href="{{ route('register_customer') }}"> Register</a>
                                     </div>
                                 </div>
                                 <a href="#" class="widget-header border-left pl-3 ml-3">
@@ -77,14 +77,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link pl-0" href="#"> <strong>All category</strong></a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Fashion</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Supermarket</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Electronics</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Baby &amp Toys</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Fitness sport</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>All category</strong></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown07">
                                     <a class="dropdown-item" href="#">Foods and Drink</a>
                                     <a class="dropdown-item" href="#">Home interior</a>
@@ -94,6 +88,8 @@
                                     <a class="dropdown-item" href="#">Category 3</a>
                                 </div>
                             </li>
+                            <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Tentang</a></li>
                         </ul>
                     </div> <!-- collapse .// -->
                 </div> <!-- container .// -->
@@ -157,18 +153,29 @@
                 </section>
                 <section class="footer-bottom row border-top-white">
                     <div class="col-sm-6"> 
-                        <p class="text-white-50"> Made with <3 <br>  by Vosidiy M.</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="text-md-right text-white-50">
-                            Copyright &copy  <br>
-                            <a href="http://bootstrap-ecommerce.com" class="text-white-50">Bootstrap-ecommerce UI kit</a>
+                        <p class="text-white-50">
+                            Copyright &copy 2019 <a href="#" class="text-white-50">warungmitra.com</a> <br>  
+                            Copyright &copy 2018 <a href="http://bootstrap-ecommerce.com" class="text-white-50">Bootstrap-ecommerce UI kit</a>
                         </p>
                     </div>
                 </section> <!-- //footer-top -->
             </div><!-- //container -->
         </footer>
         <!-- ========================= FOOTER END // ========================= -->
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/5d646faa77aa790be330de31/default';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+        <!--End of Tawk.to Script-->
 
         <!-- jQuery -->
         <script src="{{ asset('client/js/jquery-2.0.0.min.js') }}" type="text/javascript"></script>

@@ -45,11 +45,22 @@ class ClientController extends Controller
 
     public function detail($id)
     {
-        return view('pages.detailProduk');
+        $produk = Produk::find($id);
+        return view('pages.detailProduk', ['produk' => $produk]);
     }
 
     public function order($code)
     {
         return view('pages.order');
+    }
+
+    public function login()
+    {
+        return view('pages.login');
+    }
+
+    public function register()
+    {
+        return view('pages.register');
     }
 }
