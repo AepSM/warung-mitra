@@ -26,6 +26,12 @@
         <link href="{{ asset('client/css/responsive.css') }}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
 
         @yield('style')
+
+        <style>
+            .logo-text {
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+        </style>
     </head>
     <body>
         <header class="section-header">
@@ -34,8 +40,8 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5-24 col-sm-5 col-4">
                             <div class="brand-wrap">
-                                <img class="logo" src="{{ asset('client/images/logos/wm-logo.png') }}">
-                                <h2 class="logo-text">LOGO</h2>
+                                <img class="logo" src="{{ asset('client/images/logos/wm1.png') }}">
+                                <h2 class="logo-text">Warung Mitra</h2>
                             </div> <!-- brand-wrap.// -->
                         </div>
                         <div class="col-lg-13-24 col-sm-12 order-3 order-lg-2">
@@ -53,7 +59,7 @@
                         <div class="col-lg-6-24 col-sm-7 col-8  order-2  order-lg-3">
                             <div class="d-flex justify-content-end">
                                 <div class="widget-header">
-                                    <small class="title text-muted">Welcome guest!</small>
+                                    <small class="title text-muted">Selamat Datang</small>
                                     <div> 
                                         <a href="{{ route('login_customer') }}">Sign in</a> <span class="dark-transp"> | </span>
                                         <a href="{{ route('register_customer') }}"> Register</a>
@@ -63,7 +69,7 @@
                                     <div class="icontext">
                                         <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
                                     </div>
-                                    <span class="badge badge-pill badge-danger notify">0</span>
+                                    <span class="badge badge-pill badge-danger notify notif-cart">0</span>
                                 </a>
                             </div> <!-- widgets-wrap.// -->
                         </div> <!-- col.// -->

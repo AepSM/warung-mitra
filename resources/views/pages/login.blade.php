@@ -7,7 +7,7 @@
 <html>
     
 <head>
-	<title>My Awesome Login Page</title>
+	<title>Warung Mitra | Login</title>
 	<!-- Font awesome 5 -->
     <link href="{{ asset('client/fonts/fontawesome/css/fontawesome-all.min.css') }}" type="text/css" rel="stylesheet">
     <style>

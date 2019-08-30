@@ -7,7 +7,7 @@
 <html>
     
 <head>
-	<title>My Awesome Login Page</title>
+	<title>Warung Mitra | Register</title>
 	<!-- Font awesome 5 -->
     <link href="{{ asset('client/fonts/fontawesome/css/fontawesome-all.min.css') }}" type="text/css" rel="stylesheet">
     <style>
@@ -24,15 +24,15 @@
 			width: 350px;
 			margin-top: 10%;
 			margin-bottom: auto;
-			background: #f39c12;
+			background: #fff;
 			position: relative;
 			display: flex;
 			justify-content: center;
 			flex-direction: column;
 			padding: 10px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			border-radius: 5px;
 
 		}
@@ -42,7 +42,7 @@
 			width: 170px;
 			top: -75px;
 			border-radius: 50%;
-			background: #60a3bc;
+			background: #fff;
 			padding: 10px;
 			text-align: center;
 		}

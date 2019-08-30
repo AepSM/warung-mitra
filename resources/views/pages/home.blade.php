@@ -125,7 +125,7 @@
                     success: function (response) {
                         $.each(response.data, function (i, value) {
                             var data = " " +
-                                "<a href=\"http://warung-mitra-admin.test/detail/1\">" +
+                                "<a href=\"http://warung-mitra-admin.test/detail/" + value.id + "\">" +
                                 "   <div class=\"col-md-2 col-sm-6\">" +
                                 "       <figure class=\"card card-product\">" +
                                 "           <div class=\"img-wrap\"> <img src=\"img/" + value.gambar1 + "\"></div>" +
