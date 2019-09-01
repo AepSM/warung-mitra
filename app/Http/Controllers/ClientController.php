@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produk;
 use App\Slider;
+use App\OrderSementara;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -47,6 +48,20 @@ class ClientController extends Controller
     {
         $produk = Produk::find($id);
         return view('pages.detailProduk', ['produk' => $produk]);
+    }
+
+    public function insertCart(Request $request)
+    {
+        $produk = Produk::where('id', $request->produk_id)->first();
+        $orderSementara = OrderSementara::create([
+            "produk_id" => $produk->id,
+            "harga" => $produk->harga
+        ]);
+
+        return response()->json([
+            'success' => 'data berhasil disimpan',
+            'data' => $request->header('User-Agent')
+        ]);
     }
 
     public function order($code)

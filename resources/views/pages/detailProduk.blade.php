@@ -48,10 +48,10 @@
                                 </dl>
                                 <div class="row">
                                     <div class="col-sm">
-                                        <a href="#" class="btn btn-warning btn-block btn-cart"> <i class="fa fa-shopping-cart"></i> Masukkan Keranjang </a>
+                                        <button id="btnCart" class="btn btn-warning btn-block btn-cart" data-id="{{ $produk->id }}"> <i class="fa fa-shopping-cart"></i> Masukkan Keranjang </button>
                                     </div>
                                     <div class="col-sm">
-                                        <a href="#" class="btn btn-warning btn-block btn-beli"> Beli </a>
+                                        <button class="btn btn-warning btn-block btn-beli"> Beli </button>
                                     </div>
                                 </div>
                                 <!-- short-info-wrap .// -->
@@ -122,6 +122,23 @@
 
 @section('script')
 <script>
-    
+    $('document').ready(function () {
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+        $('#btnCart').on('click', function () {
+            var id = $(this).data('id');
+            $.ajax({
+                    url: '{{ URL::route('simpan_cart') }}',
+                    type: 'POST',
+                    data: {
+                        _token: CSRF_TOKEN,
+                        produk_id: id
+                    },
+                    success: function(response) {
+                        console.log(response);
+                    }
+                });
+        });
+    });
 </script>
 @endsection

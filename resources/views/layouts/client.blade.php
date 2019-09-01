@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Warung Mitra</title>
         
         <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
@@ -191,7 +192,6 @@
         <script src="{{ asset('client/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
         <script src="{{ asset('client/plugins/slickslider/slick.min.js') }}"></script>
         <!-- custom javascript -->
-        <script src="{{ asset('client/js/script.js') }}" type="text/javascript"></script>
 
         @yield('script')
     </body>
