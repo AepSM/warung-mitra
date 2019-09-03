@@ -123,6 +123,8 @@
 @section('script')
 <script>
     $('document').ready(function () {
+        countCart();
+
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
         $('#btnCart').on('click', function () {
@@ -135,10 +137,24 @@
                         produk_id: id
                     },
                     success: function(response) {
-                        console.log(response);
+                        $('#notifcart').empty();
+                        countCart();
                     }
                 });
         });
+
+        function countCart() {
+            $.ajax({
+                url: '{{ URL::route('count_cart') }}',
+                type: 'GET',
+                success: function (response) {
+                    console.log(response);
+                    var data = response.data;
+
+                    $('#notifcart').append(data);
+                }
+            })
+        }
     });
 </script>
 @endsection

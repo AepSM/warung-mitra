@@ -77,6 +77,7 @@
             tampilSlider();
             tampilSliderSide();
             tampilProduk();
+            countCart();
 
             function tampilSlider() {
                 $.ajax({
@@ -124,8 +125,11 @@
                     type: 'GET',
                     success: function (response) {
                         $.each(response.data, function (i, value) {
+                            var url = '{{ URL::route("detail", ":id") }}';
+                            url = url.replace(':id', value.id);
+                            
                             var data = " " +
-                                "<a href=\"http://warung-mitra-admin.test/detail/" + value.id + "\">" +
+                                "<a href=\"" + url + "\">" +
                                 "   <div class=\"col-md-2 col-sm-6\">" +
                                 "       <figure class=\"card card-product\">" +
                                 "           <div class=\"img-wrap\"> <img src=\"img/" + value.gambar1 + "\"></div>" +
@@ -147,6 +151,18 @@
                         });
                     }
                 });
+            }
+
+            function countCart() {
+                $.ajax({
+                    url: '{{ URL::route('count_cart') }}',
+                    type: 'GET',
+                    success: function (response) {
+                        var data = response.data;
+
+                        $('#notifcart').append(data);
+                    }
+                })
             }
         })
     </script>

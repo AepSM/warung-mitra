@@ -35,6 +35,10 @@
         </style>
     </head>
     <body>
+        {{-- test session --}}
+        {{-- <div class="alert alert-primary" role="alert">
+            {{ session('kode') }}
+        </div> --}}
         <header class="section-header">
             <section class="header-main">
                 <div class="container">
@@ -66,11 +70,11 @@
                                         <a href="{{ route('register_customer') }}"> Register</a>
                                     </div>
                                 </div>
-                                <a href="#" class="widget-header border-left pl-3 ml-3">
+                                <a href="#" class="widget-header border-left pl-3 ml-3 shopping-cart">
                                     <div class="icontext">
                                         <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
                                     </div>
-                                    <span class="badge badge-pill badge-danger notify notif-cart">0</span>
+                                    <span class="badge badge-pill badge-danger notify notif-cart" id="notifcart"></span>
                                 </a>
                             </div> <!-- widgets-wrap.// -->
                         </div> <!-- col.// -->

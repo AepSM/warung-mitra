@@ -15,11 +15,17 @@ Route::get('/', 'ClientController@index');
 Route::get('/tampilProduk', 'ClientController@tampilProduk');
 Route::get('/tampilSlider', 'ClientController@tampilSlider');
 Route::get('/tampilSliderSide', 'ClientController@tampilSliderSide');
-Route::get('/detail/{id}', 'ClientController@detail');
+Route::get('/detail/{id}', 'ClientController@detail')->name('detail');
+Route::get('/countCart', 'ClientController@countCart')->name('count_cart');
 Route::post('/simpanCart', 'ClientController@insertCart')->name('simpan_cart');
 Route::get('/order/{code}', 'ClientController@order');
 Route::get('/register_customer', 'ClientController@register')->name('register_customer');
 Route::get('/login_customer', 'ClientController@login')->name('login_customer');
+Route::get('/login_customer', 'ClientController@login')->name('login_customer');
+
+Route::get('/session/tampil','SessionController@tampilkanSession');
+Route::get('/session/buat','SessionController@buatSession');
+Route::get('/session/hapus','SessionController@hapusSession');
 
 Auth::routes();
 

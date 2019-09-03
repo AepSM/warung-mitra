@@ -18,6 +18,7 @@ class CreateOrderSementarasTable extends Migration
             $table->integer('produk_id')->unsigned()->nullable();
             $table->smallInteger('qty')->nullable();
             $table->integer('harga')->unsigned()->nullable();
+            $table->string('kode', 100)->nullable();
             $table->timestamps();
         });
     }
