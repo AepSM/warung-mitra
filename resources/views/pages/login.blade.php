@@ -24,7 +24,8 @@
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background: #f39c12;
+			/* background: #f39c12; */
+			background: #fff;
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -42,7 +43,8 @@
 			width: 170px;
 			top: -75px;
 			border-radius: 50%;
-			background: #60a3bc;
+			/* background: #60a3bc; */
+			background: #fff;
 			padding: 10px;
 			text-align: center;
 		}
@@ -90,7 +92,7 @@
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="{{ asset('client/images/logos/wm-logo.png') }}" class="brand_logo" alt="Logo">
+						<img src="{{ asset('client/images/logos/logo-wm.png') }}" class="brand_logo" alt="Logo">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">

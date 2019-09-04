@@ -90,7 +90,7 @@
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="{{ asset('client/images/logos/wm-logo.png') }}" class="brand_logo" alt="Logo">
+						<img src="{{ asset('client/images/logos/logo-wm.png') }}" class="brand_logo" alt="Logo">
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">

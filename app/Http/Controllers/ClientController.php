@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Produk;
 use App\Slider;
+use App\Kategori;
 use App\OrderSementara;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class ClientController extends Controller
 {
     public function index()
     {
-        return view('pages.home');
+        $kategoris = Kategori::get();
+        return view('pages.home', ['kategoris' => $kategoris]);
     }
 
     public function tampilProduk()
@@ -93,9 +95,30 @@ class ClientController extends Controller
         ]);
     }
 
-    public function order($code)
+    public function order(Request $request)
     {
-        return view('pages.order');
+        $kode = $request->session()->get('kode');
+
+        $orderSementara = OrderSementara::where('kode', $kode)
+            ->with('data_produk')
+            ->get();
+
+        return view('pages.order', ['orders' => $orderSementara]);
+        // return view('pages.order');
+    }
+
+    public function orderData(Request $request)
+    {
+        $kode = $request->session()->get('kode');
+
+        $orderSementara = OrderSementara::where('kode', $kode)
+            ->with('data_produk')
+            ->get();
+
+        return response()->json([
+            'success' => 'sukses',
+            'data' => $orderSementara
+        ]);
     }
 
     public function login()

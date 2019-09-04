@@ -5,162 +5,144 @@
 <section class="section-content bg padding-y border-top">
     <div class="container">    
         <div class="row">
-            <main class="col-sm-9">    
+            <main class="col-sm-12">    
                 <div class="card">
                     <table class="table table-hover shopping-cart-wrap">
                         <thead class="text-muted">
                             <tr>
-                                <th scope="col">Product</th>
-                                <th scope="col" width="120">Quantity</th>
-                                <th scope="col" width="120">Price</th>
+                                <th scope="col">Produk</th>
+                                <th scope="col" width="160">Quantity</th>
+                                <th scope="col" width="160">Bayar</th>
                                 <th scope="col" class="text-right" width="200">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <figure class="media">
-                                        <div class="img-wrap"><img src="{{ asset('client/images/items/1.jpg') }}" class="img-thumbnail img-sm"></div>
-                                        <figcaption class="media-body">
-                                            <h6 class="title text-truncate">Product name goes here </h6>
-                                            <dl class="dlist-inline small">
-                                                <dt>Size: </dt>
-                                                <dd>XXL</dd>
-                                            </dl>
-                                            <dl class="dlist-inline small">
-                                                <dt>Color: </dt>
-                                                <dd>Orange color</dd>
-                                            </dl>
-                                        </figcaption>
-                                    </figure> 
-                                </td>
-                                <td> 
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>	
-                                        <option>3</option>	
-                                        <option>4</option>	
-                                    </select> 
-                                </td>
-                                <td> 
-                                    <div class="price-wrap"> 
-                                        <var class="price">USD 145</var> 
-                                        <small class="text-muted">(USD5 each)</small> 
-                                    </div> <!-- price-wrap .// -->
-                                </td>
-                                <td class="text-right"> 
-                                    <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-                                    <a href="" class="btn btn-outline-danger"> × Remove</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <figure class="media">
-                                        <div class="img-wrap"><img src="{{ asset('client/images/items/2.jpg') }}" class="img-thumbnail img-sm"></div>
-                                        <figcaption class="media-body">
-                                            <h6 class="title text-truncate">Product name goes here </h6>
-                                            <dl class="dlist-inline small">
-                                                <dt>Size: </dt>
-                                                <dd>XXL</dd>
-                                            </dl>
-                                            <dl class="dlist-inline small">
-                                                <dt>Color: </dt>
-                                                <dd>Orange color</dd>
-                                            </dl>
-                                        </figcaption>
-                                    </figure> 
-                                </td>
-                                <td> 
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>	
-                                        <option>3</option>	
-                                        <option>4</option>	
-                                    </select> 
-                                </td>
-                                <td> 
-                                    <div class="price-wrap"> 
-                                        <var class="price">USD 35</var> 
-                                        <small class="text-muted">(USD10 each)</small> 
-                                    </div> <!-- price-wrap .// -->
-                                </td>
-                                <td class="text-right"> 
-                                    <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-                                    <a href="" class="btn btn-outline-danger btn-round"> × Remove</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <figure class="media">
-                                        <div class="img-wrap"><img src="{{ asset('client/images/items/3.jpg') }}" class="img-thumbnail img-sm"></div>
-                                        <figcaption class="media-body">
-                                            <h6 class="title text-truncate">Product name goes here </h6>
-                                            <dl class="dlist-inline small">
-                                                <dt>Size: </dt>
-                                                <dd>XXL</dd>
-                                            </dl>
-                                            <dl class="dlist-inline small">
-                                                <dt>Color: </dt>
-                                                <dd>Orange color</dd>
-                                            </dl>
-                                        </figcaption>
-                                    </figure> 
-                                </td>
-                                <td> 
-                                    <select class="form-control">
-                                        <option>1</option>
-                                        <option>2</option>	
-                                        <option>3</option>	
-                                        <option>4</option>	
-                                    </select> 
-                                </td>
-                                <td> 
-                                    <div class="price-wrap"> 
-                                        <var class="price">USD 45</var> 
-                                        <small class="text-muted">(USD15 each)</small> 
-                                    </div> <!-- price-wrap .// -->
-                                </td>
-                                <td class="text-right"> 
-                                    <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-outline-success" data-toggle="tooltip"> <i class="fa fa-heart"></i></a> 
-                                    <a href="" class="btn btn-outline-danger btn-round"> × Remove</a>
-                                </td>
-                            </tr>
+                            @foreach ($orders as $order)
+                                <tr>
+                                    <td>
+                                        <figure class="media">
+                                            <div class="img-wrap"><img src="{{ asset('img/' . $order->data_produk->gambar1) }}" class="img-thumbnail img-sm"></div>
+                                            <figcaption class="media-body">
+                                                <h6 class="title text-truncate">{{ $order->data_produk->nama }} </h6>
+                                                <dl class="dlist-inline small">
+                                                    <dt>Size: </dt>
+                                                    <dd>XXL</dd>
+                                                </dl>
+                                                <dl class="dlist-inline small">
+                                                    <dt>Color: </dt>
+                                                    <dd>Orange color</dd>
+                                                </dl>
+                                            </figcaption>
+                                        </figure> 
+                                    </td>
+                                    <td> 
+                                        <input type="number" id="quantity" name="quantity" class="form-control input-number" value="{{ $order->qty }}" min="1" max="100">
+                                    </td>
+                                    <td> 
+                                        <div class="price-wrap"> 
+                                            <var class="price">Rp. {{ rupiah($order->data_produk->harga) }}</var> 
+                                        </div> <!-- price-wrap .// -->
+                                    </td>
+                                    <td class="text-right"> 
+                                        <a href="" class="btn btn-outline-danger"> × Remove</a>
+                                    </td>
+                                </tr>                                
+                            @endforeach
                         </tbody>
                     </table>
-                </div> <!-- card.// -->    
-            </main> <!-- col.// -->
-            <aside class="col-sm-3">
-                <p class="alert alert-success">Add USD 5.00 of eligible items to your order to qualify for FREE Shipping. </p>
-                <dl class="dlist-align">
-                    <dt>Total price: </dt>
-                    <dd class="text-right">USD 568</dd>
-                </dl>
-                <dl class="dlist-align">
-                    <dt>Discount:</dt>
-                    <dd class="text-right">USD 658</dd>
-                </dl>
-                <dl class="dlist-align h4">
-                    <dt>Total:</dt>
-                    <dd class="text-right"><strong>USD 1,650</strong></dd>
-                </dl>
+                </div> <!-- card.// -->
                 <hr>
-                <figure class="itemside mb-3">
-                    <aside class="aside"><img src="{{ asset('client/images/icons/pay-v') }}isa.png"></aside>
-                    <div class="text-wrap small text-muted">
-                        Pay 84.78 AED ( Save 14.97 AED )
-                        By using ADCB Cards 
-                    </div>
-                </figure>
-                <figure class="itemside mb-3">
-                    <aside class="aside"> <img src="{{ asset('client/images/icons/pay-m') }}astercard.png"> </aside>
-                    <div class="text-wrap small text-muted">
-                        Pay by MasterCard and Save 40%. <br>
-                        Lorem ipsum dolor 
-                    </div>
-                </figure>    
-            </aside> <!-- col.// -->
+                <div class="form-group">
+                    <button class="btn btn-success btn-block">Pembayaran</button>
+                </div>    
+            </main> <!-- col.// -->
         </div>    
     </div> <!-- container .//  -->
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
+@endsection
+
+@section('script')
+    <script>
+        $('document').ready(function () {
+            countCart();
+            orderData();
+
+            function countCart() {
+                $.ajax({
+                    url: '{{ URL::route('count_cart') }}',
+                    type: 'GET',
+                    success: function (response) {
+                        var data = response.data;
+
+                        $('#notifcart').append(data);
+                    }
+                })
+            }
+
+            function rupiah(bilangan) {
+                var bilangan = bilangan;
+                    
+                var	number_string = bilangan.toString(),
+                    sisa 	= number_string.length % 3,
+                    rupiah 	= number_string.substr(0, sisa),
+                    ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
+                        
+                if (ribuan) {
+                    separator = sisa ? '.' : '';
+                    rupiah += separator + ribuan.join('.');
+                }
+
+                return rupiah;
+            }
+
+            // function orderData() {
+            //     $.ajax({
+            //         url: '{{ URL::route('order_data') }}',
+            //         type: 'GET',
+            //         success: function (response) {
+            //             console.log(response);
+            //             $.each(response.data, function (i, value) {
+            //                 var disable = "";
+            //                 if (value.qty < 2) {
+            //                     disable = "disabled";
+            //                 }
+
+            //                 var data = " " +
+            //                         "<tr>" +
+            //                         "   <td>" +
+            //                         "      <figure class=\"media\">" +
+            //                         "          <div class=\"img-wrap\"><img src=\"img/" + value.data_produk.gambar1 + "\" class=\"img-thumbnail img-sm\"></div>" +
+            //                         "          <figcaption class=\"media-body\">" +
+            //                         "              <h6 class=\"title text-truncate\">" + value.data_produk.nama + "</h6>" +
+            //                         "              <dl class=\"dlist-inline small\">" +
+            //                         "                  <dt>Size: </dt>" +
+            //                         "                  <dd>XXL</dd>" +
+            //                         "              </dl>" +
+            //                         "              <dl class=\"dlist-inline small\">" +
+            //                         "                  <dt>Color: </dt>" +
+            //                         "                  <dd>Orange color</dd>" +
+            //                         "              </dl>" +
+            //                         "          </figcaption>" +
+            //                         "      </figure>" +
+            //                         "   </td>" +
+            //                         "   <td>" +
+            //                         "       <input type=\"number\" id=\"quantity\" data-id=\"" + value.id + "\" name=\"quantity\" class=\"form-control input-number\" value=\"" + value.qty + "\" min=\"1\" max=\"100\">" +
+            //                         "   </td>" +
+            //                         "   <td>" + 
+            //                         "       <div class=\"price-wrap\">" +
+            //                         "           <var class=\"price\">Rp. " + rupiah(value.data_produk.harga) + "</var>" + 
+            //                         "       </div>" +
+            //                         "   </td>" +
+            //                         "   <td class=\"text-right\"> " +
+            //                         "       <a href=\"\" class=\"btn btn-outline-danger\"> × Remove</a>" +
+            //                         "   </td>" +
+            //                         "</tr>";
+            //                 $('tbody').append(data);
+            //             })
+            //         }
+            //     })
+            // }
+        })
+    </script>
 @endsection

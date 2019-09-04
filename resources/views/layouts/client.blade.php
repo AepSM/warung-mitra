@@ -45,7 +45,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-5-24 col-sm-5 col-4">
                             <div class="brand-wrap">
-                                <img class="logo" src="{{ asset('client/images/logos/wm1.png') }}">
+                                <img class="logo" src="{{ asset('client/images/logos/logo-wm.png') }}">
                                 <h2 class="logo-text">Warung Mitra</h2>
                             </div> <!-- brand-wrap.// -->
                         </div>
@@ -70,7 +70,7 @@
                                         <a href="{{ route('register_customer') }}"> Register</a>
                                     </div>
                                 </div>
-                                <a href="#" class="widget-header border-left pl-3 ml-3 shopping-cart">
+                                <a href="{{ route('order') }}" class="widget-header border-left pl-3 ml-3 shopping-cart">
                                     <div class="icontext">
                                         <div class="icon-wrap icon-sm round border"><i class="fa fa-shopping-cart"></i></div>
                                     </div>
@@ -88,19 +88,18 @@
                     </button>
                     <div class="collapse navbar-collapse" id="main_nav">
                         <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>All category</strong></a>
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>All category</strong></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown07">
-                                    <a class="dropdown-item" href="#">Foods and Drink</a>
-                                    <a class="dropdown-item" href="#">Home interior</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Category 1</a>
-                                    <a class="dropdown-item" href="#">Category 2</a>
-                                    <a class="dropdown-item" href="#">Category 3</a>
+                                    <a class="dropdown-item" href="#">Elektronik</a>
+                                    <a class="dropdown-item" href="#">Gadget</a>
+                                    <a class="dropdown-item" href="#">Herbal</a>
+                                    <a class="dropdown-item" href="#">Kelontong</a>
+                                    <a class="dropdown-item" href="#">Kosmetik</a>
                                 </div>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Tentang</a></li>
                         </ul>
                     </div> <!-- collapse .// -->
                 </div> <!-- container .// -->
@@ -174,6 +173,15 @@
         </footer>
         <!-- ========================= FOOTER END // ========================= -->
 
+        <!-- jQuery -->
+        <script src="{{ asset('client/js/jquery-2.0.0.min.js') }}" type="text/javascript"></script>
+
+        <!-- Bootstrap4 files-->
+        <script src="{{ asset('client/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('client/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('client/plugins/slickslider/slick.min.js') }}"></script>
+        <!-- custom javascript -->
+
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
             var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -187,15 +195,6 @@
             })();
         </script>
         <!--End of Tawk.to Script-->
-
-        <!-- jQuery -->
-        <script src="{{ asset('client/js/jquery-2.0.0.min.js') }}" type="text/javascript"></script>
-
-        <!-- Bootstrap4 files-->
-        <script src="{{ asset('client/js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('client/plugins/owlcarousel/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('client/plugins/slickslider/slick.min.js') }}"></script>
-        <!-- custom javascript -->
 
         @yield('script')
     </body>
