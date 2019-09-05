@@ -104,7 +104,6 @@ class ClientController extends Controller
             ->get();
 
         return view('pages.order', ['orders' => $orderSementara]);
-        // return view('pages.order');
     }
 
     public function orderData(Request $request)
@@ -119,6 +118,16 @@ class ClientController extends Controller
             'success' => 'sukses',
             'data' => $orderSementara
         ]);
+    }
+
+    public function pembayaran()
+    {
+        return view('pages.pembayaran');
+    }
+
+    public function metodePembayaran()
+    {
+        return view('pages.metode_pembayaran');
     }
 
     public function login()

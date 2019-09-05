@@ -20,6 +20,8 @@ Route::get('/countCart', 'ClientController@countCart')->name('count_cart');
 Route::post('/simpanCart', 'ClientController@insertCart')->name('simpan_cart');
 Route::get('/order', 'ClientController@order')->name('order');
 Route::get('/orderData', 'ClientController@orderData')->name('order_data');
+Route::get('/pembayaran', 'ClientController@pembayaran')->name('pembayaran');
+Route::get('/metodePembayaran', 'ClientController@metodePembayaran')->name('metode_pembayaran');
 Route::get('/register_customer', 'ClientController@register')->name('register_customer');
 Route::get('/login_customer', 'ClientController@login')->name('login_customer');
 Route::get('/login_customer', 'ClientController@login')->name('login_customer');

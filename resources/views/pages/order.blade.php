@@ -53,7 +53,8 @@
                 </div> <!-- card.// -->
                 <hr>
                 <div class="form-group">
-                    <button class="btn btn-success btn-block">Pembayaran</button>
+                    {{-- <button class="btn btn-success btn-block">Pembayaran</button> --}}
+                    <a href="{{ route('pembayaran') }}" class="btn btn-success btn-block">pembayaran</a>
                 </div>    
             </main> <!-- col.// -->
         </div>    
