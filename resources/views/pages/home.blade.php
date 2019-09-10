@@ -126,6 +126,7 @@
                     success: function (response) {
                         $.each(response.data, function (i, value) {
                             var url = '{{ URL::route("detail", ":id") }}';
+                            var nama_produk = value.nama;
                             url = url.replace(':id', value.id);
                             
                             var data = " " +
@@ -135,7 +136,7 @@
                                 "           <div class=\"img-wrap\"> <img src=\"img/" + value.gambar1 + "\"></div>" +
                                 "           <figcaption class=\"info-wrap\" style=\"height: 100px;\">" +
                                 "               <div style=\"height: 50px;\">" +
-                                "                   <a href=\"#\" class=\"title text-sm\"><small>" + value.nama + "</small></a>" +
+                                "                   <a href=\"#\" class=\"title text-sm\"><small>" + nama_produk.substring(0, 50) + "....</small></a>" +
                                 "               </div>" +
                                 "               <div class=\"price-wrap\">" +
                                 "                   <div class=\"float-left\">" +

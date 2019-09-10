@@ -1,3 +1,5 @@
+<!-- Copyright &copy 2018 http://bootstrap-ecommerce.com -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -93,11 +95,23 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><strong>All category</strong></a>
                                 <div class="dropdown-menu" aria-labelledby="dropdown07">
-                                    <a class="dropdown-item" href="#">Elektronik</a>
-                                    <a class="dropdown-item" href="#">Gadget</a>
-                                    <a class="dropdown-item" href="#">Herbal</a>
-                                    <a class="dropdown-item" href="#">Kelontong</a>
-                                    <a class="dropdown-item" href="#">Kosmetik</a>
+                                    <a class="dropdown-item" href="#">Bahan Masak</a>
+                                    <a class="dropdown-item" href="#">Barang Paketan</a>
+                                    {{-- <a class="dropdown-item" href="#">Daging</a>
+                                    <a class="dropdown-item" href="#">Gadget</a> --}}
+                                    {{-- <a class="dropdown-item" href="#">Herbal</a> --}}
+                                    <a class="dropdown-item" href="#">Kebutuhan Bayi</a>
+                                    {{-- <a class="dropdown-item" href="#">Kelontong</a> --}}
+                                    <a class="dropdown-item" href="#">Kesehatan & Kecantikan</a>
+                                    <a class="dropdown-item" href="#">Kopi</a>
+                                    <a class="dropdown-item" href="#">Makanan</a>
+                                    <a class="dropdown-item" href="#">Mie</a>
+                                    <a class="dropdown-item" href="#">Minuman</a>
+                                    <a class="dropdown-item" href="#">Pakaian</a>
+                                    <a class="dropdown-item" href="#">Perlengkapan Mandi</a>
+                                    <a class="dropdown-item" href="#">Perlengkapan Rumah Tangga</a>
+                                    <a class="dropdown-item" href="#">Renceng</a>
+                                    <a class="dropdown-item" href="#">Sembako</a>
                                 </div>
                             </li>
                         </ul>
@@ -119,7 +133,6 @@
                                 <li> <a href="#">Help center</a></li>
                                 <li> <a href="#">Money refund</a></li>
                                 <li> <a href="#">Terms and Policy</a></li>
-                                <li> <a href="#">Open dispute</a></li>
                             </ul>
                         </aside>
                         <aside class="col-sm-3  col-md-3 white">
@@ -144,17 +157,17 @@
                         </aside>
                         <aside class="col-sm-3">
                             <article class="white">
-                                <h5 class="title">Contacts</h5>
+                                <h5 class="title">Kontak</h5>
                                 <p>
                                     <strong>Phone: </strong> +123456789 <br> 
-                                    <strong>Fax:</strong> +123456789
+                                    <strong>Phone: </strong> +123456789 <br> 
+                                    <strong>WhatsApp: </strong> +123456789 
                                 </p>
 
                                 <div class="btn-group white">
                                     <a class="btn btn-facebook" title="Facebook" target="_blank" href="#"><i class="fab fa-facebook-f  fa-fw"></i></a>
                                     <a class="btn btn-instagram" title="Instagram" target="_blank" href="#"><i class="fab fa-instagram  fa-fw"></i></a>
                                     <a class="btn btn-youtube" title="Youtube" target="_blank" href="#"><i class="fab fa-youtube  fa-fw"></i></a>
-                                    <a class="btn btn-twitter" title="Twitter" target="_blank" href="#"><i class="fab fa-twitter  fa-fw"></i></a>
                                 </div>
                             </article>
                         </aside>
