@@ -96,18 +96,20 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+					<form method="POST" action="{{ route('login') }}">
+						@csrf
+
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="email">
+							<input type="text" name="email" class="form-control input_user" value="" placeholder="email">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
 						</div>
 						<div class="form-group">
 							<div class="custom-control custom-checkbox">
@@ -115,19 +117,19 @@
 								<label class="custom-control-label" for="customControlInline">Remember me</label>
 							</div>
 						</div>
+						<div class="d-flex justify-content-center mt-3 login_container">
+							<button type="submit" name="button" class="btn login_btn">Login</button>
+						</div>
 					</form>
 				</div>
-				<div class="d-flex justify-content-center mt-3 login_container">
-					<button type="button" name="button" class="btn login_btn">Login</button>
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Belum punya akun? <a href="{{ route('register_customer') }}" class="ml-2">Register</a>
+					</div>
+					<div class="d-flex justify-content-center links">
+						<a href="#">Lupa Password</a>
+					</div>
 				</div>
-				{{-- <div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="#" class="ml-2">Sign Up</a>
-					</div>
-					<div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
-					</div>
-				</div> --}}
 			</div>
 		</div>
 	</div>

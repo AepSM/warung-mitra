@@ -24,7 +24,6 @@ Route::get('/pembayaran', 'ClientController@pembayaran')->name('pembayaran');
 Route::get('/metodePembayaran', 'ClientController@metodePembayaran')->name('metode_pembayaran');
 Route::get('/register_customer', 'ClientController@register')->name('register_customer');
 Route::get('/login_customer', 'ClientController@login')->name('login_customer');
-Route::get('/login_customer', 'ClientController@login')->name('login_customer');
 
 Route::get('/session/tampil','SessionController@tampilkanSession');
 Route::get('/session/buat','SessionController@buatSession');

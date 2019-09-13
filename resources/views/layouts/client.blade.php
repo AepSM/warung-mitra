@@ -68,7 +68,7 @@
                                 <div class="widget-header">
                                     <small class="title text-muted">Selamat Datang</small>
                                     <div> 
-                                        <a href="{{ route('login_customer') }}">Sign in</a> <span class="dark-transp"> | </span>
+                                        <a href="{{ route('login_customer') }}">Login</a> <span class="dark-transp"> | </span>
                                         <a href="{{ route('register_customer') }}"> Register</a>
                                     </div>
                                 </div>
