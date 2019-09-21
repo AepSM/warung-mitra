@@ -38,7 +38,7 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         \Validator::make($request->all(), [
-            "nama" => "required|max:20"
+            "nama" => "required|max:50"
         ])->validate();
 
         $kategoris = Kategori::create([
@@ -84,7 +84,7 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         \Validator::make($request->all(), [
-            "nama" => "required|max:20"
+            "nama" => "required|max:50"
         ])->validate();
 
         $kategori = Kategori::find($id);

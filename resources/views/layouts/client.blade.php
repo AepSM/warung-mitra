@@ -66,11 +66,28 @@
                         <div class="col-lg-6-24 col-sm-7 col-8  order-2  order-lg-3">
                             <div class="d-flex justify-content-end">
                                 <div class="widget-header">
-                                    <small class="title text-muted">Selamat Datang</small>
-                                    <div> 
-                                        <a href="{{ route('login_customer') }}">Login</a> <span class="dark-transp"> | </span>
-                                        <a href="{{ route('register_customer') }}"> Register</a>
+                                    @auth
+                                        
+                                    
+                                    <small class="title text-muted">aa</small>
+                                    <div>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                                Logout
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
                                     </div>
+                                    @else
+                                    <small class="title text-muted">Selamat Datang</small>
+                                    <div>
+                                        <a href="{{ route('customer.loginform') }}">Login</a> <span class="dark-transp"> | </span>
+                                        <a href="{{ route('customer.registerform') }}"> Register</a>
+                                    </div>
+                                    @endauth
+                                    
                                 </div>
                                 <a href="{{ route('order') }}" class="widget-header border-left pl-3 ml-3 shopping-cart">
                                     <div class="icontext">

@@ -96,7 +96,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form method="POST" action="{{ route('login') }}">
+					<form method="POST" action="{{ route('login_customer') }}">
 						@csrf
 
 						<div class="input-group mb-3">

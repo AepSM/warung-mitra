@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'ClientController@index');
+Auth::routes();
+
+Route::get('/', 'HomeController@index');
+// Route::get('/', 'ClientController@index');
 Route::get('/tampilProduk', 'ClientController@tampilProduk');
 Route::get('/tampilSlider', 'ClientController@tampilSlider');
 Route::get('/tampilSliderSide', 'ClientController@tampilSliderSide');
@@ -22,14 +25,17 @@ Route::get('/order', 'ClientController@order')->name('order');
 Route::get('/orderData', 'ClientController@orderData')->name('order_data');
 Route::get('/pembayaran', 'ClientController@pembayaran')->name('pembayaran');
 Route::get('/metodePembayaran', 'ClientController@metodePembayaran')->name('metode_pembayaran');
-Route::get('/register_customer', 'ClientController@register')->name('register_customer');
-Route::get('/login_customer', 'ClientController@login')->name('login_customer');
+
+Route::get('/customer/login', 'CustomerLoginController@showLoginForm')->name('customer.loginform');
+Route::get('/customer/register', 'CustomerLoginController@showRegisterForm')->name('customer.registerform');
+Route::post('/customer/login', 'CustomerLoginController@login')->name('customer.login');
+Route::post('/customer/register', 'CustomerLoginController@register')->name('customer.register');
+Route::get('/customer/home', 'CustomerLoginController@index')->middleware('auth:customer');
+Route::get('/customer/logout', 'CustomerLoginController@logout')->name('customer.logout');
 
 Route::get('/session/tampil','SessionController@tampilkanSession');
 Route::get('/session/buat','SessionController@buatSession');
 Route::get('/session/hapus','SessionController@hapusSession');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
