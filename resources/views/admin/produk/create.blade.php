@@ -51,22 +51,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="berat">Berat</label>
-                                    <input type="text" class="form-control {{ $errors->first('berat') ? "is-invalid" : "" }}" name="berat" value="{{ old('berat') }}">
-                                    <div class="invalid-feedback">
-                                        <p style="color: red;">{{$errors->first('berat')}}</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="merek">Merek</label>
-                                    <input type="text" class="form-control {{ $errors->first('merek') ? "is-invalid" : "" }}" name="merek" value="{{ old('merek') }}">
-                                    <div class="invalid-feedback">
-                                        <p style="color: red;">{{$errors->first('merek')}}</p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <label for="deskripsi">Deskripsi</label>
-                                    <textarea type="text" class="form-control {{ $errors->first('deskripsi') ? "is-invalid" : "" }}" name="deskripsi">{{ old('deskripsi') }}</textarea>
+                                    <textarea type="text" id="deskripsi" class="form-control {{ $errors->first('deskripsi') ? "is-invalid" : "" }}" name="deskripsi">
+                                        {{ old('deskripsi') }}
+                                    </textarea>
                                     <div class="invalid-feedback">
                                         <p style="color: red;">{{$errors->first('deskripsi')}}</p>
                                     </div>
@@ -102,4 +90,17 @@
     </div>
 </section>
 <!-- /.content -->
+@endsection
+
+@section('script')
+<!-- CK Editor -->
+<script src="{{ asset('adminlte/bower_components/ckeditor/ckeditor.js') }}"></script>
+
+<script>
+    $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('deskripsi')
+    })
+</script>
 @endsection

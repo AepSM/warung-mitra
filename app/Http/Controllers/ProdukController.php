@@ -43,8 +43,6 @@ class ProdukController extends Controller
         \Validator::make($request->all(), [
             "nama" => "required|max:50",
             "kategori" => "required",
-            "berat" => "required|numeric",
-            "merek" => "required",
             "deskripsi" => "required",
             "stok" => "required|numeric",
             "harga" => "required|numeric",
@@ -64,8 +62,6 @@ class ProdukController extends Controller
         $produks = Produk::create([
             "nama" => $request->nama,
             "kategori_id" => $request->kategori,
-            "berat" => $request->berat,
-            "merek" => $request->merek,
             "deskripsi" => $request->deskripsi,
             "stok" => $request->stok,
             "harga" => $request->harga,
@@ -113,8 +109,6 @@ class ProdukController extends Controller
     {
         \Validator::make($request->all(), [
             "nama" => "required|max:50",
-            "berat" => "required|numeric",
-            "merek" => "required",
             "deskripsi" => "required",
             "stok" => "required|numeric",
             "harga" => "required|numeric"
@@ -123,8 +117,6 @@ class ProdukController extends Controller
         $produk = Produk::find($id);
         $produk->nama = $request->nama;
         $produk->kategori_id = $request->kategori;
-        $produk->berat = $request->berat;
-        $produk->merek = $request->merek;
         $produk->deskripsi = $request->deskripsi;
         $produk->stok = $request->stok;
         $produk->harga = $request->harga;
