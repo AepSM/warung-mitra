@@ -40,9 +40,14 @@
                         <i class="fa fa-book"></i> <span>Slider</span>
                     </a>
                 </li>
-                <li class="{{ set_active(['kontak', 'kontak/*']) }}">
-                    <a href="{{ url('/kontak') }}">
-                        <i class="fa fa-book"></i> <span>Transaksi</span>
+                <li class="{{ set_active(['order', 'order/*']) }}">
+                    <a href="{{ url('/order') }}">
+                        <i class="fa fa-book"></i> <span>Order</span>
+                    </a>
+                </li>
+                <li class="{{ set_active(['customer', 'customer/*']) }}">
+                    <a href="{{ url('/customer') }}">
+                        <i class="fa fa-book"></i> <span>Customer</span>
                     </a>
                 </li>
             </ul>
