@@ -25,11 +25,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Order
+        Customer
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Order</li>
+        <li class="active">Customer</li>
     </ol>
 </section>
 
@@ -52,7 +52,7 @@
                     </a> --}}
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Data Order</h3>
+                            <h3 class="box-title">Data Customer</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -60,17 +60,29 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Kode</th>
-                                        <th>Tanggal</th>
                                         <th>Nama</th>
-                                        <th>Total Bayar</th>
-                                        <th>Metode Bayar</th>
-                                        <th>Status Bayar</th>
+                                        <th>Email</th>
+                                        <th>Nomor</th>
+                                        <th>Gender</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    customer
+                                    @foreach ($customers as $key => $customer)
+                                        <tr>
+                                            <td>{{ $key + 1 }}</td>
+                                            <td>{{ $customer->nama }}</td>
+                                            <td>{{ $customer->email }}</td>
+                                            <td>{{ $customer->nomor_hp }}</td>
+                                            <td>{{ $customer->jenkel }}</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a href="{{ route('customer.edit', ['id' => $customer->id]) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+                                                    <a href="{{ route('customer.hapus', ['id' => $customer->id]) }}" onclick="confirm('Yakin akan hapus?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

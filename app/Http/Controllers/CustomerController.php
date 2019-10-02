@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -13,7 +14,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        return view('admin.customer.index');
+        $customers = Customer::get();
+        return view('admin.customer.index', ['customers' => $customers]);
     }
 
     /**
