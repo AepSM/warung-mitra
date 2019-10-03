@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -75,6 +76,16 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->status_bayar = $request->status_bayar;
         $order->save();
+
+        if ($request->total_bayar > 99) {
+            $total_bayar = $request->total_bayar;
+            $hitung_point = floor($total_bayar / 100);
+
+            $customer = Customer::find($order->customer_id);
+            $customer->poin = $customer->poin + $hitung_point;
+            $customer->save();
+        }
+        
 
         $request->session()->flash('status', 'Data berhasil diubah');
         

@@ -63,7 +63,7 @@
                                         <th>Nama</th>
                                         <th>Email</th>
                                         <th>Nomor</th>
-                                        <th>Gender</th>
+                                        <th>Poin</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
@@ -74,7 +74,7 @@
                                             <td>{{ $customer->nama }}</td>
                                             <td>{{ $customer->email }}</td>
                                             <td>{{ $customer->nomor_hp }}</td>
-                                            <td>{{ $customer->jenkel }}</td>
+                                            <td>{{ rupiah($customer->poin) }}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ route('customer.edit', ['id' => $customer->id]) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>

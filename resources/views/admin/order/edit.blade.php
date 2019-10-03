@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="status_bayar">status_bayar</label>
-                                        <select name="status_bayar" id="status_bayar" class="form-control">
+                                        <select name="status_bayar" id="status_bayar" class="form-control" {{ $order->status_bayar == 1 ? 'disabled' : '' }}>
                                             <option value="0" {{ $order->status_bayar == 0 ? 'selected': '' }}>Belum lunas</option>
                                             <option value="1" {{ $order->status_bayar == 1 ? 'selected': '' }}>Lunas</option>
                                         </select>

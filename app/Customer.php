@@ -10,7 +10,8 @@ class Customer extends Authenticatable
     protected $fillable = [
         'username',
         'email',
-        'password'
+        'password',
+        'poin'
     ];
     protected $hidden = [
         'password', 'remember_token'
