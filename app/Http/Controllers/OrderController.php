@@ -84,8 +84,7 @@ class OrderController extends Controller
             $customer = Customer::find($order->customer_id);
             $customer->poin = $customer->poin + $hitung_point;
             $customer->save();
-        }
-        
+        }        
 
         $request->session()->flash('status', 'Data berhasil diubah');
         
