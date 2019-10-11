@@ -1,5 +1,13 @@
 @extends('layouts.admin')
 
+@section('style')
+<style>
+    #img_produk {
+        max-width: 100%;
+    }
+</style>
+@endsection
+
 @section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -66,15 +74,15 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="total_harga">Total Harga</label>
-                                        <input type="text" class="form-control" value="{{ $order->total_harga }}" name="total_harga">
+                                        <input type="text" class="form-control" value="{{ rupiah($order->total_harga) }}" name="total_harga">
                                     </div>
                                     <div class="form-group">
                                         <label for="ongkir">Ongkir</label>
-                                        <input type="text" class="form-control" value="{{ $order->ongkir }}" name="ongkir">
+                                        <input type="text" class="form-control" value="{{ rupiah($order->ongkir) }}" name="ongkir">
                                     </div>
                                     <div class="form-group">
                                         <label for="total_bayar">Total Bayar</label>
-                                        <input type="text" class="form-control" value="{{ $order->total_bayar }}" name="total_bayar">
+                                        <input type="text" class="form-control" value="{{ rupiah($order->total_bayar) }}" name="total_bayar">
                                     </div>
                                 </div>
                             </div>
@@ -94,6 +102,18 @@
                                     </div>
                                 </div>                                
                             @endif
+                            <div class="box-body">
+                                <div class="col-md-12">
+                                    <h4>Detail Produk</h4>
+                                    @foreach ($order->data_order_detail as $order_detail)
+                                        <div class="col-md-2" style="border: 1px solid #e0e0e0;">
+                                            <p style="height: 150px;"><img src="{{ asset('img/'.$order_detail->data_produk->gambar1) }}" alt="" id="img_produk"></p>
+                                            <p>Jumlah: {{ $order_detail->qty }}</p>
+                                            <p>Harga: {{ rupiah($order_detail->harga) }}</p>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

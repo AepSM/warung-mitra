@@ -78,7 +78,7 @@
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ route('customer.edit', ['id' => $customer->id]) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
-                                                    <a href="{{ route('customer.hapus', ['id' => $customer->id]) }}" onclick="confirm('Yakin akan hapus?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                    <a href="{{ route('customer.hapus', ['id' => $customer->id]) }}" onclick="return confirm('Yakin akan hapus?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

@@ -17,4 +17,9 @@ class Order extends Model
     {
         return $this->belongsTo('App\User', 'customer_id', 'id');
     }
+
+    public function data_order_detail()
+    {
+        return $this->hasMany('App\OrderDetail', 'kode', 'kode');
+    }
 }
