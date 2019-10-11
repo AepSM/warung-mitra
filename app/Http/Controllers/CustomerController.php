@@ -58,7 +58,9 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $customer = Customer::find($id);
+
+        return view('admin.customer.edit', ['customer' => $customer]);
     }
 
     /**
@@ -82,5 +84,16 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function hapus(Request $request, $id)
+    {
+        $customer = Customer::find($id);
+        
+        $customer->delete();
+
+        $request->session()->flash('status', 'Data berhasil dihapus');
+        
+        return redirect()->route('customer.index');
     }
 }

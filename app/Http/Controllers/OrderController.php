@@ -16,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::get();
+        $orders = Order::orderBy('id', 'desc')->get();
         return view('admin.order.index', ['orders' => $orders]);
     }
 
@@ -49,7 +49,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+
+        return view('admin.order.detail', ['order' => $order]);
     }
 
     /**

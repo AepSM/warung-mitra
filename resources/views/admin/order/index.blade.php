@@ -84,15 +84,24 @@
                                                     Aplikasi Koperasi Mitra
                                                 @elseif($order->jenis_bayar == 3)
                                                     Transfer Bank
+                                                @elseif($order->jenis_bayar == 3)
+                                                    COD
                                                 @else
-                                                    Cash On Delivery
+                                                    -
                                                 @endif
                                             </td>
                                             <td><button class="btn btn-sm btn-{{ $order->status_bayar == 0 ? 'danger' : 'success' }}">{{ $order->status_bayar == 0 ? 'Belum lunas' : 'Lunas' }}</button></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <a href="{{ route('order.edit', ['id' => $order->id]) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
-                                                    <a href="{{ route('order.hapus', ['id' => $order->id]) }}" onclick="confirm('Yakin akan hapus?')" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                        <span><i class="fa fa-gear"></i></span>
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a class="dropdown-item" href="{{ route('order.show', ['id' => $order->id]) }}">Detail</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('order.edit', ['id' => $order->id]) }}">Edit</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('order.hapus', ['id' => $order->id]) }}" onclick="return confirm('Yakin akan hapus?')">Hapus</a></li>
+                                                    </ul>
                                                 </div>
                                             </td>
                                         </tr>
