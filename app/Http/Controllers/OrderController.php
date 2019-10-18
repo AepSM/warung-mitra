@@ -80,9 +80,9 @@ class OrderController extends Controller
         $order->status_bayar = $request->status_bayar;
         $order->save();
 
-        if ($request->total_bayar > 99) {
+        if ($request->total_bayar > 299) {
             $total_bayar = $request->total_bayar;
-            $hitung_point = floor($total_bayar / 100);
+            $hitung_point = floor($total_bayar / 300);
 
             $customer = Customer::find($order->customer_id);
             $customer->poin = $customer->poin + $hitung_point;

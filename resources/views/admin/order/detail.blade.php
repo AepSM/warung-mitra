@@ -92,11 +92,11 @@
                                         <h3>Dropshipper</h3>
                                         <hr>
                                         <div class="form-group">
-                                            <label for="dropshipper_nama">Nama Pengirim</label>
+                                            <label for="dropshipper_nama">Nama Penerima</label>
                                             <input type="text" class="form-control" value="{{ $order->dropshipper_nama }}" name="dropshipper_nama">
                                         </div>
                                         <div class="form-group">
-                                            <label for="dropshipper_detail">Info Tambahan</label>
+                                            <label for="dropshipper_detail">Alamat Lengkap</label>
                                             <input type="text" class="form-control" value="{{ $order->dropshipper_detail }}" name="dropshipper_detail">
                                         </div>
                                     </div>
