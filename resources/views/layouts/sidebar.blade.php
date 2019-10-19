@@ -40,10 +40,17 @@
                         <i class="fa fa-book"></i> <span>Slider</span>
                     </a>
                 </li>
-                <li class="{{ set_active(['order', 'order/*']) }}">
-                    <a href="{{ url('/order') }}">
+                <li class="{{ set_active(['order', 'order/*']) }} treeview">
+                    <a href="#">
                         <i class="fa fa-book"></i> <span>Order</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
                     </a>
+                    <ul class="treeview-menu">
+                        <li class="{{ set_active(['order', 'order']) }}"><a href="{{ url('/order') }}"><i class="fa fa-circle-o"></i> Data</a></li>
+                        <li class="{{ set_active(['order/history', 'order/history/*']) }}"><a href="{{ url('/order/history') }}"><i class="fa fa-circle-o"></i> History</a></li>
+                    </ul>
                 </li>
                 <li class="{{ set_active(['customer', 'customer/*']) }}">
                     <a href="{{ url('/customer') }}">

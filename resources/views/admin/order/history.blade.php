@@ -25,11 +25,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Order
+        Order History
     </h1>
     <ol class="breadcrumb">
         <li><a href="{{ route('home') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Order</li>
+        <li class="active">Order History</li>
     </ol>
 </section>
 
@@ -46,7 +46,7 @@
                     @endif
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Data Order</h3>
+                            <h3 class="box-title">Data Order History</h3>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -92,10 +92,8 @@
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
-                                                        <li><a class="dropdown-item" href="{{ route('order.show', ['id' => $order->id]) }}">Detail</a></li>
-                                                        <li><a class="dropdown-item" href="{{ route('order.edit', ['id' => $order->id]) }}">Edit</a></li>
-                                                        <li><a class="dropdown-item" href="{{ route('order.selesai', ['id' => $order->id]) }}">Selesai</a></li>
-                                                        <li><a class="dropdown-item" href="{{ route('order.hapus', ['id' => $order->id]) }}" onclick="return confirm('Yakin akan hapus?')">Hapus</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('order.history.detail', ['id' => $order->id]) }}">Detail</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('order.history.hapus', ['id' => $order->id]) }}" onclick="return confirm('Yakin akan hapus?')">Hapus</a></li>
                                                     </ul>
                                                 </div>
                                             </td>

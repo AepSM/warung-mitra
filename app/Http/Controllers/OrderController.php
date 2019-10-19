@@ -16,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::orderBy('id', 'desc')->get();
+        $orders = Order::where('status', null)->orderBy('id', 'desc')->get();
         return view('admin.order.index', ['orders' => $orders]);
     }
 
@@ -117,5 +117,47 @@ class OrderController extends Controller
         $request->session()->flash('status', 'Data berhasil dihapus');
         
         return redirect()->route('order.index');
+    }
+
+    public function selesai(Request $request, $id)
+    {
+        $order = Order::find($id);
+        $order->status = 1;
+        $order->save();
+
+        $request->session()->flash('status', 'Data bisa di lihat di menu history');
+
+        return redirect()->route('order.index');
+    }
+
+    public function history()
+    {
+        $orders = Order::where('status', 1)
+        ->orderBy('id', 'desc')
+        ->get();
+
+        return view('admin.order.history', ['orders' => $orders]);
+    }
+
+    public function historyDetail($id)
+    {
+        $order = Order::with('data_order_detail', 'data_order_detail.data_produk')
+        ->find($id);
+
+        return view('admin.order.historyDetail', ['order' => $order]);
+    }
+
+    public function historyHapus(Request $request, $id)
+    {
+        $order = Order::find($id);
+        
+        $order->delete();
+
+        $destinationPath = public_path('/img');
+        File::delete($destinationPath . '/' . $order->gambar1);
+
+        $request->session()->flash('status', 'Data berhasil dihapus');
+        
+        return redirect()->route('order.history');
     }
 }

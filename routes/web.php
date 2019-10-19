@@ -31,6 +31,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('slider/{id}/delete', 'SliderController@hapus')->name('slider.hapus');
     Route::resource('slider', 'SliderController');
 
+    Route::get('order/{id}/selesai', 'OrderController@selesai')->name('order.selesai');
+    Route::get('order/history', 'OrderController@history')->name('order.history');
+    Route::get('order/{id}/history/detail', 'OrderController@historyDetail')->name('order.history.detail');
+    Route::get('order/{id}/history/hapus', 'OrderController@historyHapus')->name('order.history.hapus');
     Route::get('order/{id}/delete', 'OrderController@hapus')->name('order.hapus');
     Route::resource('order', 'OrderController');
 
