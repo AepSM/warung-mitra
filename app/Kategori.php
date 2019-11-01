@@ -10,7 +10,7 @@ class Kategori extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'nama'
+        'nama', 'grup'
     ];
 
     public function data_produk()

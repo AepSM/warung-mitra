@@ -39,6 +39,13 @@
                                         <p style="color: red;">{{$errors->first('nama')}}</p>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="grup">Grup</label>
+                                    <input type="text" class="form-control {{ $errors->first('grup') ? "is-invalid" : "" }}" value="{{ old('grup') ? old('grup') : $kategori->grup }}" name="grup">
+                                    <div class="invalid-feedback">
+                                        <p style="color: red;">{{$errors->first('grup')}}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i></button>

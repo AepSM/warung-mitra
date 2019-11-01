@@ -14,7 +14,7 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategoris = Kategori::get();
+        $kategoris = Kategori::orderBy('grup')->get();
 
         return view('admin.kategori.index', ['kategoris' => $kategoris]);
     }
@@ -38,11 +38,13 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         \Validator::make($request->all(), [
-            "nama" => "required|max:50"
+            "nama" => "required|max:50",
+            "grup" => "required"
         ])->validate();
 
         $kategoris = Kategori::create([
-            "nama" => $request->nama
+            "nama" => $request->nama,
+            "grup" => $request->grup
         ]);
 
         $request->session()->flash('status', 'Data berhasil disimpan');
@@ -84,11 +86,13 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         \Validator::make($request->all(), [
-            "nama" => "required|max:50"
+            "nama" => "required|max:50",
+            "grup" => "required"
         ])->validate();
 
         $kategori = Kategori::find($id);
         $kategori->nama = $request->nama;
+        $kategori->grup = $request->grup;
         $kategori->save();
 
         $request->session()->flash('status', 'Data berhasil diubah');

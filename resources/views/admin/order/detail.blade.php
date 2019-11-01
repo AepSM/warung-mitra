@@ -107,7 +107,7 @@
                                     <h4>Detail Produk</h4>
                                     @foreach ($order->data_order_detail as $order_detail)
                                         <div class="col-md-2" style="border: 1px solid #e0e0e0;">
-                                            <p style="height: 150px;"><img src="{{ asset('img/'.$order_detail->data_produk->gambar1) }}" alt="" id="img_produk"></p>
+                                            <p>{{ $order_detail->data_produk->nama }}</p>
                                             <p>Jumlah: {{ $order_detail->qty }}</p>
                                             <p>Harga: {{ rupiah($order_detail->harga) }}</p>
                                         </div>

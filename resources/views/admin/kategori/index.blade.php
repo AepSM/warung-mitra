@@ -55,6 +55,7 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Nama</th>
+                                        <th>Grup</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
@@ -62,7 +63,8 @@
                                     @foreach ($kategoris as $key => $kategori)
                                         <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td>{{ $kategori->nama }}</td>
+                                            <td class="text-left">{{ $kategori->nama }}</td>
+                                            <td class="text-left">{{ $kategori->grup }}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <a href="{{ route('kategori.edit', ['id' => $kategori->id]) }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
