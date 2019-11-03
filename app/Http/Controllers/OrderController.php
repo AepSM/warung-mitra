@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Produk;
 use App\Customer;
+use App\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -124,6 +126,14 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->status = 1;
         $order->save();
+
+        $order_detail = OrderDetail::where('kode', $order->kode)->first();
+
+        $qty = $order_detail->qty;
+
+        $produk = Produk::find($order_detail->produk_id);
+        $produk->terjual = $produk->terjual + $qty;
+        $produk->save();
 
         $request->session()->flash('status', 'Data bisa di lihat di menu history');
 
