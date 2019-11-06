@@ -20,6 +20,11 @@
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                     </a>
                 </li>
+                <li class="{{ set_active(['customer', 'customer/*']) }}">
+                    <a href="{{ url('/customer') }}">
+                        <i class="fa fa-book"></i> <span>Customer</span>
+                    </a>
+                </li>
                 <li class="{{ set_active(['kategori', 'kategori/*']) }}">
                     <a href="{{ url('/kategori') }}">
                         <i class="fa fa-book"></i> <span>Kategori</span>
@@ -28,16 +33,6 @@
                 <li class="{{ set_active(['kontak', 'kontak/*']) }}">
                     <a href="{{ url('/kontak') }}">
                         <i class="fa fa-book"></i> <span>Kontak</span>
-                    </a>
-                </li>
-                <li class="{{ set_active(['produk', 'produk/*']) }}">
-                    <a href="{{ url('/produk') }}">
-                        <i class="fa fa-book"></i> <span>Produk</span>
-                    </a>
-                </li>
-                <li class="{{ set_active(['slider', 'slider/*']) }}">
-                    <a href="{{ url('/slider') }}">
-                        <i class="fa fa-book"></i> <span>Slider</span>
                     </a>
                 </li>
                 <li class="{{ set_active(['order', 'order/*']) }} treeview">
@@ -52,9 +47,19 @@
                         <li class="{{ set_active(['order/history', 'order/history/*']) }}"><a href="{{ url('/order/history') }}"><i class="fa fa-circle-o"></i> History</a></li>
                     </ul>
                 </li>
-                <li class="{{ set_active(['customer', 'customer/*']) }}">
-                    <a href="{{ url('/customer') }}">
-                        <i class="fa fa-book"></i> <span>Customer</span>
+                <li class="{{ set_active(['produk', 'produk/*']) }}">
+                    <a href="{{ url('/produk') }}">
+                        <i class="fa fa-book"></i> <span>Produk</span>
+                    </a>
+                </li>
+                <li class="{{ set_active(['slider', 'slider/*']) }}">
+                    <a href="{{ url('/slider') }}">
+                        <i class="fa fa-book"></i> <span>Slider</span>
+                    </a>
+                </li>
+                <li class="{{ set_active(['tracking', 'tracking/*']) }}">
+                    <a href="{{ url('/tracking') }}">
+                        <i class="fa fa-book"></i> <span>Tracking</span>
                     </a>
                 </li>
             </ul>

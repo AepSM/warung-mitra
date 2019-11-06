@@ -10,7 +10,15 @@ class Order extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'kode', 'customer_id', 'tanggal', 'nama', 'alamat', 'kecamatan', 'status_bayar', 'jenis_bayar'
+        'kode', 
+        'customer_id', 
+        'tanggal', 
+        'nama', 
+        'alamat', 
+        'kecamatan', 
+        'status_bayar', 
+        'jenis_bayar',
+        'status_kirim'
     ];
 
     public function data_customer()

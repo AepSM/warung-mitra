@@ -60,6 +60,7 @@
                                         <th>Total Bayar</th>
                                         <th>Metode Bayar</th>
                                         <th>Status Bayar</th>
+                                        <th>Tracking</th>
                                         <th>#</th>
                                     </tr>
                                 </thead>
@@ -85,6 +86,15 @@
                                                 @endif
                                             </td>
                                             <td><button class="btn btn-sm btn-{{ $order->status_bayar == 0 ? 'danger' : 'success' }}">{{ $order->status_bayar == 0 ? 'Belum lunas' : 'Lunas' }}</button></td>
+                                            <td>
+                                                @if ($order->status_kirim == 1)
+                                                    <u style="color: red;">Diterima</u>
+                                                @elseif ($order->status_kirim == 2)
+                                                    <u style="color: green;">Dikirim</u>
+                                                @else
+                                                    -
+                                                @endif
+                                            </td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
