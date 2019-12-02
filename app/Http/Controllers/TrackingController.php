@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Ulasan;
 use App\Tracking;
+use App\OrderDetail;
 use Illuminate\Http\Request;
 
 class TrackingController extends Controller
@@ -45,7 +47,7 @@ class TrackingController extends Controller
             $order = Order::where('kode', $request->kode)->first();
             $order->status_kirim = 1;
             $order->save();           
-        } else {
+        } elseif ($request->btn == "dikirim") {
             $tracking = Tracking::create([
                 'kode' => $request->kode,
                 'keterangan' => "Orderan dikirim dari ".$request->dikirim_dari.". Kurir a.n ".$request->kurir.", nomor hp ".$request->nomor_hp
@@ -53,6 +55,18 @@ class TrackingController extends Controller
             $order = Order::where('kode', $request->kode)->first();
             $order->status_kirim = 2;
             $order->save(); 
+        } else {
+            $order = Order::where('kode', $request->kode)->first();
+            $order->status_kirim = 3;
+            $order->save();
+            
+            $orderDetails = OrderDetail::where('kode', $request->kode)->get();
+            foreach ($orderDetails as $key => $orderDetail) {
+                Ulasan::create([
+                    'produk_id' => $orderDetail->produk_id,
+                    'customer_id' => $order->customer_id
+                ]);
+            }
         }
 
         $orders = Order::where('kode', $request->kode)->get();

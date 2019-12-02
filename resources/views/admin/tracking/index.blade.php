@@ -107,7 +107,7 @@
                             if (value.status_kirim == 1) {
                                 var status_kirim = "<button class=\"btn-diterima-belum-dikirim\">Sudah diterima tapi belum dikirim</button>";
                             } else if (value.status_kirim == 2) {
-                                var status_kirim = "<u>Sudah Dikirim</u>";
+                                var status_kirim = "<button class=\"btn-sampai\">Sudah Dikirim, Belum Sampai</button>";
                             } else {
                                 var status_kirim = "<button class=\"btn-diterima\">Belum diterima</button>";
                             }
@@ -200,7 +200,7 @@
                             if (value.status_kirim == 1) {
                                 var status_kirim = "<button class=\"btn-diterima-belum-dikirim\">Sudah diterima tapi belum dikirim</button>";
                             } else if (value.status_kirim == 2) {
-                                var status_kirim = "<u>Sudah Dikirim</u>";
+                                var status_kirim = "<button class=\"btn-sampai\">Sudah Dikirim, Belum Sampai</button>";
                             } else {
                                 var status_kirim = "<button class=\"btn-diterima\">Belum diterima</button>";
                             }
@@ -215,7 +215,43 @@
                         });
                     }
                 });
-            })
+            });
+
+            // diterima
+            $('table .datarow').on('click', '.btn-sampai', function() {
+                var kode = $('#kode').val();
+                $.ajax({
+                    url: '{{ URL::route('tracking.store') }}',
+                    type: 'POST',
+                    data: {
+                        _token: CSRF_TOKEN,
+                        btn: 'sampai',
+                        kode: kode
+                    },
+                    success: function(response) {
+                        $('.alert').show();
+                        $.each(response.data, function(i, value){
+                            $('.datarow').empty();
+
+                            if (value.status_bayar == 1) {
+                                var status_bayar = "Lunas";
+                            } else {
+                                var status_bayar = "Belum Lunas";
+                            }
+                                                        
+                            var status_kirim = "<u>Sampai</u>";
+
+                            var dataTr = "" +
+                                "<td>" + value.nama + "</td>" +
+                                "<td>" + value.tanggal + "</td>" +
+                                "<td>" + status_bayar + "</td>" +
+                                "<td>" + status_kirim + "</td>";
+                            
+                            $('.datarow').append(dataTr);
+                        });
+                    }
+                });
+            });
         });
     </script>
 @endsection
