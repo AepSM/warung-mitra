@@ -56,6 +56,10 @@ class TrackingController extends Controller
             $order->status_kirim = 2;
             $order->save(); 
         } else {
+            $tracking = Tracking::create([
+                'kode' => $request->kode,
+                'keterangan' => "Orderan sampai"
+            ]);
             $order = Order::where('kode', $request->kode)->first();
             $order->status_kirim = 3;
             $order->save();
