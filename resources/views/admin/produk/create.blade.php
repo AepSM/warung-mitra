@@ -80,6 +80,13 @@
                                         <p style="color: red;">{{$errors->first('gambar')}}</p>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="video_id">Video_id</label>
+                                    <input type="text" class="form-control {{ $errors->first('video_id') ? "is-invalid" : "" }}" name="video_id" value="{{ old('video_id') }}">
+                                    <div class="invalid-feedback">
+                                        <p style="color: red;">{{$errors->first('video_id')}}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i></button>

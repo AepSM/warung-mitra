@@ -105,13 +105,18 @@
                             <div class="box-body">
                                 <div class="col-md-12">
                                     <h4>Detail Produk</h4>
-                                    @foreach ($order->data_order_detail as $order_detail)
-                                        <div class="col-md-2" style="border: 1px solid #e0e0e0;">
-                                            <p>{{ $order_detail->data_produk->nama }}</p>
-                                            <p>Jumlah: {{ $order_detail->qty }}</p>
-                                            <p>Harga: {{ rupiah($order_detail->harga) }}</p>
-                                        </div>
-                                    @endforeach
+                                    <table class="table">
+                                        @foreach ($order->data_order_detail as $key => $order_detail)
+                                            <tr>
+                                                <td rowspan="2">{{ $key + 1 }}</td>
+                                                <td colspan="2">{{ $order_detail->data_produk->nama }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jumlah: {{ $order_detail->qty }}</td>
+                                                <td>Harga: {{ rupiah($order_detail->harga) }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
                                 </div>
                             </div>
                         </div>

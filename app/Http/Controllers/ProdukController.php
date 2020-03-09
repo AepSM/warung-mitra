@@ -65,7 +65,8 @@ class ProdukController extends Controller
             "deskripsi" => $request->deskripsi,
             "stok" => $request->stok,
             "harga" => $request->harga,
-            "gambar1" => $image_name
+            "gambar1" => $image_name,
+            "video_id" => $request->video_id
         ]);
 
         $request->session()->flash('status', 'Data berhasil disimpan');
@@ -120,6 +121,7 @@ class ProdukController extends Controller
         $produk->deskripsi = $request->deskripsi;
         $produk->stok = $request->stok;
         $produk->harga = $request->harga;
+        $produk->video_id = $request->video_id;
 
         if ($request->hasFile('gambar')) {
             $destinationPath = public_path('/img');

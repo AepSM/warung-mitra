@@ -83,6 +83,13 @@
                                         <input class="form-control" type="file" id="gambar" name="gambar">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="video_id">video_id</label>
+                                    <input type="text" class="form-control {{ $errors->first('video_id') ? "is-invalid" : "" }}" value="{{ old('video_id') ? old('video_id') : $produk->video_id }}" name="video_id">
+                                    <div class="invalid-feedback">
+                                        <p style="color: red;">{{$errors->first('video_id')}}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-success"><i class="fa fa-save"></i></button>

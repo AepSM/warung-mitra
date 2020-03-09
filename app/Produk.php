@@ -15,7 +15,8 @@ class Produk extends Model
         'deskripsi',
         'stok',
         'harga',
-        'gambar1'
+        'gambar1',
+        'video_id'
     ];
 
     public function data_kondisi()
